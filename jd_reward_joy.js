@@ -12,7 +12,7 @@ cron "0,8,16 * * *" script-path=jd_joy_reward.js,tag=宠汪汪积分兑换奖品
  */
 
 
-let common = require("./function/common");
+let common = require("./utils/common");
 let $ = new common.env('宠汪汪兑换京豆');
 let fs = require("fs");
 $.setOptions({
