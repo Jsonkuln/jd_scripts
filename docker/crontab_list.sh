@@ -40,6 +40,8 @@
 30 16-23/1 * * * node /scripts/jd_long_half_redrain.js >> /scripts/logs/jd_long_half_redrain.log 2>&1
 #整点京豆雨
 0 0,1-23/1 * * * node /scripts/jd_super_redrain.js >> /scripts/logs/jd_super_redrain.log 2>&1
+#京东直播
+10-20/5 12 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
 #天天优惠大乐透
 30 7 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
 #早起福利
