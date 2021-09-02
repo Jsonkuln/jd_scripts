@@ -20,6 +20,7 @@ cron "15 7 * * *" script-path=https://raw.githubusercontent.com/yongyuanlin/jd_s
 ============小火箭=========
 领券中心签到 = type=cron,script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_ccSign.js, cronexpr="15 7 * * *", timeout=3600, enable=true
  */
+
 const $ = new Env('领券中心签到');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -157,10 +158,10 @@ function getSign(functionid, body, uuid) {
       "client":"android",
       "clientVersion":"10.1.2"
     }
-    let HostArr = ['jdsign.cf', 'jdsign.tk']
+    let HostArr = ['jdsign.cf', 'signer.nz.lu']
     let Host = HostArr[Math.floor((Math.random() * HostArr.length))]
     let options = {
-      url: `https://cdn.jdsign.cf/ddo`,
+      url: `https://cdn.xia.me/ddo`,
       body: JSON.stringify(data),
       headers: {
         Host,
@@ -188,10 +189,10 @@ function getsecretPin(pin) {
     let data = {
       "pt_pin": pin
     }
-    let HostArr = ['jdsign.cf', 'jdsign.tk']
+    let HostArr = ['jdsign.cf', 'signer.nz.lu']
     let Host = HostArr[Math.floor((Math.random() * HostArr.length))]
     let options = {
-      url: `https://cdn.jdsign.cf/pin`,
+      url: `https://cdn.xia.me/pin`,
       body: JSON.stringify(data),
       headers: {
         Host,
