@@ -56,7 +56,6 @@ let run_pins = ["weiguoqw", "122827561-122864", "13535330772_p", "jd_5e6adefd4d2
 //friendsArr内置太多会导致IOS端部分软件重启,可PR过来(此处目的:帮别人助力可得30g狗粮)
 let friendsArr = ["weiguoqw", "122827561-122864", "13535330772_p", "jd_5e6adefd4d2c0", "jd_4699046444b2c", "jd_77c410a580577", "jd_54a04ef64c7f2", "wdNMTUDYYGaLoaC"]
 
-
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);
@@ -279,7 +278,7 @@ function readToken() {
 }
 function readToken() {
   return new Promise(resolve => {
-    $.get({url: `https://cdn.xia.me/gettoken`,headers:{'Host':'jdsign.cf'}, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `https://cdn.nz.lu/gettoken`,headers:{'Host':'jdsign.cf'}, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
