@@ -1,16 +1,14 @@
 /*
-宠汪汪验证码获取
-活动入口：京东APP我的-更多工具-宠汪汪
-脚本兼容: Quantumult X, Surge, Loon, JSBox, Node.js
-==============Quantumult X==============
-[task_local]
-#宠汪汪积分兑换奖品
-58 23,7,15 * * * jd_task_validate.js, tag=宠汪汪验证码获取, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png, enabled=true
+new Env('京东验证码获取')
+13 1,22,23 * * * jd_task_validate.js
 */
+
 let common = require("./utils/common");
-let $ = new common.env('京东验证码获取'); 
+let $ = new common.env('京东验证码获取');
 let validator = require("./utils/jdValidate");
-let fs = require("fs"); 
+let fs = require("fs");
+let min = 2,
+    help = $.config[$.filename(__filename)] || Math.min(min, $.config.JdMain) || min;
 $.setOptions({
     headers: {
         'content-type': 'application/json',
@@ -18,6 +16,11 @@ $.setOptions({
         'referer': 'https://happy.m.jd.com/babelDiy/Zeus/3ugedFa7yA6NhxLN5gw2L3PF9sQC/index.html?asid=287215626&un_area=12_904_905_57901&lng=117.612969135975&lat=23.94014745198865',
     }
 });
+$.readme = `
+58 7,15,23 * * * task ${$.runfile}
+exprot ${$.runfile}=5  #限制跑验证码账户个数
+export JDJR_SERVER=ip  #如获取不到验证码,本地先获取iv.jd.com的ip,再自行添加环境变量
+`
 eval(common.eval.mainEval($));
 async function prepare() {
     $.thread = 1;
@@ -26,25 +29,29 @@ async function prepare() {
         if (error) return console.log("初始化失败" + error.message);
         console.log("初始化成功");
     })
+    $.jump = $.config[$.runfile] ? cookies['all'].splice(parseInt($.config[$.runfile])) : []
 }
 async function main(id) {
+    if ($.jump.includes(id.cookie)) {
+        return;
+    }
     let code = new validator.JDJRValidator;
     for (let i = 0; i < 2; i++) {
-        while (true) {
-            try {
-                let veri = await code.run();
-                if (veri.validate) {
-                    $.validate = veri.validate;
-                    break
-                }
-            } catch (e) {}
+        validate = ''
+        try {
+            let veri = await code.run();
+            if (veri.validate) {
+                validate = veri.validate;
+            }
+        } catch (e) {}
+        // $.code.push(validate)
+        if (validate) {
+            fs.appendFile('./jdvalidate.txt', validate + "\n", (error) => {
+                if (error) return console.log("追加文件失败" + error.message);
+                console.log("追加成功");
+            })
         }
-        $.code.push($.validate)
-        fs.appendFile('./jdvalidate.txt', $.validate + "\n", (error) => {
-            if (error) return console.log("追加文件失败" + error.message);
-            console.log("追加成功");
-        })
-        console.log("验证码", $.validate)
+        console.log("验证码", validate)
     }
     try {} catch (e) {}
 }
