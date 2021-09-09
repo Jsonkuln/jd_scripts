@@ -86,6 +86,8 @@
 12 12 28-31,1-12 8,9 * node /scripts/jd_iqoo_run.js >> /scripts/logs/jd_iqoo_run.log 2>&1
 #东东泡泡大战
 1 1 * * * node /scripts/jd_ppdz.js >> /scripts/logs/jd_ppdz.log 2>&1
+#内容鉴赏官
+15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 
 ##############长期活动##############
 # 签到
