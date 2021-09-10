@@ -69,7 +69,7 @@
 #汪汪乐园每日任务
 20 7,9,17,20 * * * node /scripts/jd_joypark_task.js >> /scripts/logs/jd_joypark_task.log 2>&1
 #特务Z
-23 8,9 3 8 * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.log 2>&1
+23 8,13 * * * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.log 2>&1
 #店铺签到
 30 9,16 * * * node /scripts/jd_ShopSign.js >> /scripts/logs/jd_ShopSign.log 2>&1
 #来电好物季
