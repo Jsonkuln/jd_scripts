@@ -155,7 +155,7 @@
 # 京喜财富岛
 30 * * * *  node /scripts/jx_cfd2.js >> /scripts/logs/jx_cfd2.log 2>&1
 # 京东极速版签到+赚现金任务
-15 0-23/2 * * *  node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
+15 0,3 * * *  node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
 # 京东抽奖机
 22 0,12,18 * * *  node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 京东摇京豆
@@ -172,6 +172,8 @@
 10 10 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 # 京喜牧场
 20 0-23/3 * * * node /scripts/jx_mc.js >> /scripts/logs/jx_mc.log 2>&1
+# 京喜牧场-新手任务
+30 7 */7 * * node /scripts/jx_mc_novicetaskv2.js >> /scripts/logs/jx_mc_novicetaskv2.log 2>&1
 # 宠汪汪
 15 */2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
 # 宠汪汪积分兑换京豆
