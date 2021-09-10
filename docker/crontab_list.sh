@@ -86,6 +86,8 @@
 1 1 * * * node /scripts/jd_ppdz.js >> /scripts/logs/jd_ppdz.log 2>&1
 #内容鉴赏官
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
+#领券 --》浮窗集卡
+30 9,22 1-12 9 * node /scripts/jd_necklacecard.js >> /scripts/logs/jd_necklacecard.log 2>&1
 
 ##############长期活动##############
 # 签到
