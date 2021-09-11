@@ -75,7 +75,7 @@
 #来电好物季
 35 8 * * * node /scripts/jd_ldhwj.js >> /scripts/logs/jd_ldhwj.log 2>&1
 #明星小店
-10 9,18 9-25 8 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
+12 11 10-17 9 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 #王者荣耀投票
 23 8,9 22-31,1-5 8,9 * node /scripts/jd_king.js >> /scripts/logs/jd_king.log 2>&1
 #领券中心签到
@@ -88,6 +88,8 @@
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 #领券 --》浮窗集卡
 30 9,22 1-12 9 * node /scripts/jd_necklacecard.js >> /scripts/logs/jd_necklacecard.log 2>&1
+#京喜财富岛合成月饼
+10 * * * * node /scripts/jx_cfd_mooncake.js >> /scripts/logs/jx_cfd_mooncake.log 2>&1
 
 ##############长期活动##############
 # 签到

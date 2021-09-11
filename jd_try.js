@@ -25,7 +25,7 @@ let args_xh = {
    * B商品原价99元，试用价0元，如果下面设置为50，那么B商品将会被加入到待提交的试用组
    * 默认为0
    * */
-  jdPrice: process.env.JD_TRY_PRICE * 1 || 100,
+  jdPrice: process.env.JD_TRY_PRICE * 1 || 0,
   /*
    * 获取试用商品类型，默认为1，原来不是数组形式，我以为就只有几个tab，结果后面还有我服了
    * 1 - 精选
@@ -111,8 +111,9 @@ let args_xh = {
 //上面很重要，遇到问题请把上面注释看一遍再来问
 !(async () => {
   console.log("X1a0He留：遇到问题请把脚本内的注释看一遍再来问，谢谢");
+  console.log(`本脚本默认不运行，也不建议运行\n如需运行请自行添加环境变量：JD_TRY，值填：true\n`);
   await $.wait(500);
-
+  if (process.env.JD_TRY && process.env.JD_TRY === "true") {
     await requireConfig();
     if (!$.cookiesArr[0]) {
       $.msg($.name, "【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取", "https://bean.m.jd.com/", {"open-url": "https://bean.m.jd.com/"});
@@ -177,7 +178,9 @@ let args_xh = {
       }
     }
     await $.notify.sendNotify(`${$.name}`, notifyMsg);
-   
+  } else {
+    console.log(`\n您未设置运行【京东试用】脚本，结束运行！\n`);
+  }
 })()
   .catch((e) => {
     console.error(`❗️ ${$.name} 运行错误！\n${e}`);
