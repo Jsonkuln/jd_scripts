@@ -41,7 +41,7 @@
 #整点京豆雨
 0 0,1-23/1 * * * node /scripts/jd_super_redrain.js >> /scripts/logs/jd_super_redrain.log 2>&1
 #京东直播
-10-20/5 12 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
+50 12-14 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
 #天天优惠大乐透
 30 7 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
 #早起福利
@@ -86,6 +86,8 @@
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 #京喜财富岛合成月饼
 10 * * * * node /scripts/jx_cfd_mooncake.js >> /scripts/logs/jx_cfd_mooncake.log 2>&1
+# 母婴-跳跳乐
+1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 
 ##############长期活动##############
 # 签到
