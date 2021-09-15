@@ -10,11 +10,11 @@ new Env('宠汪汪积分兑换奖品')
 [Script]
 cron "0,8,16 * * *" script-path=jd_reward_joy.js,tag=宠汪汪积分兑换奖品
  */
-
-
 let common = require("./utils/common");
 let $ = new common.env('宠汪汪兑换京豆');
 let fs = require("fs");
+let min = 2,
+    help = $.config[$.filename(__filename)] || Math.min(min, $.config.JdMain) || min;
 $.setOptions({
     headers: {
         'content-type': 'application/json',
@@ -22,6 +22,9 @@ $.setOptions({
         'referer': 'https://happy.m.jd.com/babelDiy/',
     }
 });
+$.readme = `
+0 */8 * * * task ${$.runfile}
+`
 eval(common.eval.mainEval($));
 async function prepare() {
     $.thread = 1;
@@ -74,7 +77,7 @@ async function main(id) {
                         log = "刷新验证"
                         break;
                     default:
-                        log = "未知状态"
+                        log = $.source.errorCode
                         break
                 }
                 console.log(id.user, log, i.giftValue, $.source.currentTime)

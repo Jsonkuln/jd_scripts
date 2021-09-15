@@ -24,8 +24,6 @@
 0 */4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 #东东泡泡大战
 1 0 * * * node /scripts/jd_ppdz.js >> /scripts/logs/jd_ppdz.log 2>&1
-#星系牧场
-30 7 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
 # 极速版红包
 30 9,16 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
 #推一推
@@ -58,10 +56,6 @@
 10 7 * * * node /scripts/jd_fc.js >> /scripts/logs/jd_fc.log 2>&1
 #发财大赢家
 20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
-#MM领京豆
-21 9 * * * node /scripts/jd_MMdou.js >> /scripts/logs/jd_MMdou.log 2>&1
-#MM领京豆
-6 9,12 * * * node /scripts/jd_mb.js >> /scripts/logs/jd_mb.log 2>&1
 #京喜领88元红包
 30 1,6,21 * * * node /scripts/jx_lhb.js >> /scripts/logs/jx_lhb.log 2>&1
 #汪汪乐园养joy
@@ -72,8 +66,6 @@
 23 8,13 * * * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.log 2>&1
 #店铺签到
 30 9,16 * * * node /scripts/jd_ShopSign.js >> /scripts/logs/jd_ShopSign.log 2>&1
-#来电好物季
-35 8 * * * node /scripts/jd_ldhwj.js >> /scripts/logs/jd_ldhwj.log 2>&1
 #明星小店
 12 11 10-17 9 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 #王者荣耀投票
@@ -96,6 +88,8 @@
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
+#MM领京豆
+21 9 * * * node /scripts/jd_MMdou.js >> /scripts/logs/jd_MMdou.log 2>&1
 # 东东超市兑换奖品
 0,30 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 摇京豆
@@ -217,7 +211,7 @@
 #京东到家鲜豆庄园
 10 8 * * * node /scripts/jd_jddj_plantBeans.js >> /scripts/logs/jd_jddj_plantBeans.log 2>&1
 #京东价格保护
-5 0 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
+#5 0 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
 # 京东试用（默认注释，请配合取关脚本使用）
 30 6 * * *  node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 #清空购物车
