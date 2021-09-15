@@ -84,8 +84,6 @@
 45 0,12 * * * node /scripts/jd_senbeans.js >> /scripts/logs/jd_senbeans.log 2>&1
 # 希捷品牌日瓜分百万京豆
 17 10 * 9,10 * node /scripts/jd_SeagateBrand.js >> /scripts/logs/jd_SeagateBrand.log 2>&1
-# 企有此礼
-30 0,14 * * * node /scripts/jd_qycl.js >> /scripts/logs/jd_qycl.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -218,9 +216,6 @@
 30 6 * * *  node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 #清空购物车
 10 7 * * * node /scripts/jd_cart_remove.js >> /scripts/logs/jd_cart_remove.log 2>&1
-#京喜购物返红包助力
-59 17,23 * * * node /scripts/jx_cashback.js >> /scripts/logs/jx_cashback.log 2>&1
-
 ##############默认注释活动##############
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
