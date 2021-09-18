@@ -1,7 +1,13 @@
 /*
+京东东东世界
+脚本说明：抽奖活动,有新活动可以@我或者提Issues
+脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
+// quantumultx
+[task_local]
+#东东世界
+cron "20 8 * * *" script-path=jd_work_ddworld.js,tag=京东东东世界
 * 活动地址:https://ddsj-dz.isvjcloud.com/dd-world/load_app/load_app.html
-cron 20 8 * * * jd_ddworld.js
-* */
+ */
 const $ = new Env('东东世界');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -114,6 +120,13 @@ async function doTask(){
                 'taskToken':$.taskDetailList.taskToken,
                 'needTime':Number($.oneTask.maxTimes) - Number($.oneTask.times)
             })
+            continue;
+        }
+        if($.oneTask.taskType === 12){
+            $.info = $.taskDetailList;
+            console.log(`任务：${$.oneTask.taskName} 去执行`);
+            await takePostRequest('do_task');
+            await $.wait(1000);
             continue;
         }
         for (let j = 0; j < $.taskDetailList.length; j++) {
