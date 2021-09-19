@@ -1,8 +1,5 @@
 /*
 new Env('宠汪汪积分兑换奖品')
-宠汪汪积分兑换奖品脚本, 目前脚本只兑换京豆，兑换京豆成功，才会发出通知提示，其他情况不通知。
-活动入口：京东APP我的-更多工具-宠汪汪
-兑换规则：一个账号一天只能兑换一次京豆。
 [task_local]
 #宠汪汪积分兑换奖品
 0,8,16 * * * jd_joy_reward.js, tag=宠汪汪积分兑换奖品, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png, enabled=true
