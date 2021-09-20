@@ -1,14 +1,14 @@
 /*
 [task_local]
 #东东玩家
-20 9 * * * https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_ddwj.js, tag= 东东玩家
+40 0,19 https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_ddwj.js, tag= 东东玩家
 ================Loon==============
 [Script]
-cron "20 9 * * *" script-path= https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_ddwj.js,tag= 东东玩家
+cron "40 0,19" script-path= https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_ddwj.js,tag= 东东玩家
 ===============Surge=================
-东东玩家 = type=cron,cronexp="20 9 * * *",wake-system=1,timeout=3600,script-path= https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_ddwj.js
+东东玩家 = type=cron,cronexp="40 0,19",wake-system=1,timeout=3600,script-path= https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_ddwj.js
 ============小火箭=========
-东东玩家 = type=cron,script-path= https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_ddwj.js, cronexpr="20 9 * * *", timeout=3600, enable=true
+东东玩家 = type=cron,script-path= https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_ddwj.js, cronexpr="40 0,19", timeout=3600, enable=true
 */
 const $ = new Env('东东玩家')
 const notify = $.isNode() ?require('./sendNotify') : '';

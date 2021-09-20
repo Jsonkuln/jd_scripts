@@ -88,7 +88,8 @@
 30 0,14 * * * node /scripts/jd_qycl.js >> /scripts/logs/jd_qycl.log 2>&1
 #京东手机狂欢城
 0 0-18/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
-
+#东东玩家
+40 0,19 * * * node /scripts/jd_ddwj.js >> /scripts/logs/jd_ddwj.log 2>&1
 
 ##############长期活动##############
 # 签到
