@@ -58,10 +58,6 @@
 20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 #京喜领88元红包
 30 1,6,21 * * * node /scripts/jx_lhb.js >> /scripts/logs/jx_lhb.log 2>&1
-#汪汪乐园养joy
-20 0-23/3 * * * node /scripts/jd_joypark_joy.js >> /scripts/jd_joypark_joy.log 2>&1
-#汪汪乐园每日任务
-20 7,9,17,20 * * * node /scripts/jd_joypark_task.js >> /scripts/logs/jd_joypark_task.log 2>&1
 #特务Z
 23 8,13 * * * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.log 2>&1
 #店铺签到
@@ -92,6 +88,8 @@
 40 0,19 * * * node /scripts/jd_ddwj.js >> /scripts/logs/jd_ddwj.log 2>&1
 #热血心跳,狂解压
 15 6,18 1-16,21-30 9,10 * node /scripts/jd_decompression.js >> /scripts/logs/jd_decompression.log 2>&1
+#东东游戏
+35 12-23/4 * * * node /scripts/jd_ddgame.js >> /scripts/logs/jd_ddgame.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -195,7 +193,13 @@
 # 宠汪汪赛跑助力
 10 10-20/2 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 # 宠汪汪偷好友积分与狗粮
-13 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
+13 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1 
+#汪汪乐园开工位
+20 9 */7 * * node /scripts/jd_joypark_open.js >> /scripts/jd_joypark_open.log 2>&1
+#汪汪乐园养joy
+20 0-23/3 * * * node /scripts/jd_joypark_joy.js >> /scripts/jd_joypark_joy.log 2>&1
+#汪汪乐园每日任务
+20 7,9,17,20 * * * node /scripts/jd_joypark_task.js >> /scripts/logs/jd_joypark_task.log 2>&1
 # 取关京东店铺和商品
 55 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 美丽研究院
