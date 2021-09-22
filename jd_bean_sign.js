@@ -1,7 +1,7 @@
 /*
 京东多合一签到,自用,可N个京东账号
 活动入口：各处的签到汇总
-8 0,8 * * * jd_bean_sign.js
+cron 8 0,8 * * * https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_bean_sign.js
 Node.JS专用
 IOS软件用户请使用 https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/utils/JD_DailyBonus.js
 更新时间：2021-6-18
@@ -145,9 +145,9 @@ async function downFile () {
   let url = '';
   await downloadUrl();
   if ($.body) {
-    url = 'https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/utils/JD_DailyBonus.js';
+    url = 'https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js';
   } else {
-    url = 'https://cdn.jsdelivr.net/gh/yongyuanlin/jd_scripts@master/utils/JD_DailyBonus.js';
+    url = 'https://cdn.jsdelivr.net/gh/NobyDa/Script@master/JD-DailyBonus/JD_DailyBonus.js';
   }
   try {
     const options = { }
