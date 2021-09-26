@@ -1,6 +1,6 @@
 /*
 cron "30 7 * * *" jd_bean_change.js, tag:资产变化强化版by-ccwav
-*/
+ */
 
 const $ = new Env('京东资产变动通知');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -341,13 +341,13 @@ async function showMsg() {
 			if ($.treeState === 2 || $.treeState === 3) {
 				ReturnMessage += `【东东农场】${$.JdFarmProdName} 可以兑换了!\n`;
 				if (userIndex1 != -1) {
-					ReceiveMessageGp1 += `【账号${$.IndexGp1} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
+					ReceiveMessageGp1 += `【账号${IndexGp1} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
 				}
 				if (userIndex2 != -1) {
-					ReceiveMessageGp2 += `【账号${$.IndexGp2} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
+					ReceiveMessageGp2 += `【账号${IndexGp2} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
 				}
 				if (userIndex1 == -1 && userIndex2 == -1) {
-					allReceiveMessage += `【账号${$.IndexAll} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
+					allReceiveMessage += `【账号${IndexAll} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
 				}
 			} else {
 				if ($.JdwaterD != 'Infinity' && $.JdwaterD != '-Infinity') {
@@ -361,26 +361,26 @@ async function showMsg() {
 			if ($.treeState === 0) {
 
 				if (userIndex1 != -1) {
-					ReceiveMessageGp1 += `【账号${$.IndexGp1} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
+					ReceiveMessageGp1 += `【账号${IndexGp1} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
 				}
 				if (userIndex2 != -1) {
-					ReceiveMessageGp2 += `【账号${$.IndexGp2} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
+					ReceiveMessageGp2 += `【账号${IndexGp2} ${$.nickName || $.UserName}】${$.JdFarmProdName} (东东农场)\n`;
 				}
 				if (userIndex1 == -1 && userIndex2 == -1) {
-					allWarnMessage += `【账号${$.IndexAll} ${$.nickName || $.UserName}】水果领取后未重新种植! (东东农场)\n`;
+					allWarnMessage += `【账号${IndexAll} ${$.nickName || $.UserName}】水果领取后未重新种植! (东东农场)\n`;
 				}
 			} else if ($.treeState === 1) {
 				ReturnMessage += `【东东农场】${$.JdFarmProdName}种植中...\n`;
 			} else {
 
 				if (userIndex1 != -1) {
-					ReceiveMessageGp1 += `【账号${$.IndexGp1} ${$.nickName || $.UserName}】状态异常! (东东农场)\n`;
+					ReceiveMessageGp1 += `【账号${IndexGp1} ${$.nickName || $.UserName}】状态异常! (东东农场)\n`;
 				}
 				if (userIndex2 != -1) {
-					ReceiveMessageGp2 += `【账号${$.IndexGp2} ${$.nickName || $.UserName}】状态异常! (东东农场)\n`;
+					ReceiveMessageGp2 += `【账号${IndexGp2} ${$.nickName || $.UserName}】状态异常! (东东农场)\n`;
 				}
 				if (userIndex1 == -1 && userIndex2 == -1) {
-					allWarnMessage += `【账号${$.IndexAll} ${$.nickName || $.UserName}】状态异常! (东东农场)\n`;
+					allWarnMessage += `【账号${IndexAll} ${$.nickName || $.UserName}】状态异常! (东东农场)\n`;
 				}
 				//ReturnMessage += `【东东农场】${$.JdFarmProdName}状态异常${$.treeState}...\n`;
 			}
@@ -394,24 +394,24 @@ async function showMsg() {
 	}
 	if ($.DdFactoryReceive) {
 		if (userIndex1 != -1) {
-			ReceiveMessageGp1 += `【账号${$.IndexGp1} ${$.nickName || $.UserName}】${$.DdFactoryReceive} (东东工厂)\n`;
+			ReceiveMessageGp1 += `【账号${IndexGp1} ${$.nickName || $.UserName}】${$.DdFactoryReceive} (东东工厂)\n`;
 		}
 		if (userIndex2 != -1) {
-			ReceiveMessageGp2 += `【账号${$.IndexGp2} ${$.nickName || $.UserName}】${$.DdFactoryReceive} (东东工厂)\n`;
+			ReceiveMessageGp2 += `【账号${IndexGp2} ${$.nickName || $.UserName}】${$.DdFactoryReceive} (东东工厂)\n`;
 		}
 		if (userIndex1 == -1 && userIndex2 == -1) {
-			allReceiveMessage += `【账号${$.IndexAll} ${$.nickName || $.UserName}】${$.DdFactoryReceive} (东东工厂)\n`;
+			allReceiveMessage += `【账号${IndexAll} ${$.nickName || $.UserName}】${$.DdFactoryReceive} (东东工厂)\n`;
 		}
 	}
 	if ($.jxFactoryReceive) {
 		if (userIndex1 != -1) {
-			ReceiveMessageGp1 += `【账号${$.IndexGp1} ${$.nickName || $.UserName}】${$.jxFactoryReceive} (京喜工厂)\n`;
+			ReceiveMessageGp1 += `【账号${IndexGp1} ${$.nickName || $.UserName}】${$.jxFactoryReceive} (京喜工厂)\n`;
 		}
 		if (userIndex2 != -1) {
-			ReceiveMessageGp2 += `【账号${$.IndexGp2} ${$.nickName || $.UserName}】${$.jxFactoryReceive} (京喜工厂)\n`;
+			ReceiveMessageGp2 += `【账号${IndexGp2} ${$.nickName || $.UserName}】${$.jxFactoryReceive} (京喜工厂)\n`;
 		}
 		if (userIndex1 == -1 && userIndex2 == -1) {
-			allReceiveMessage += `【账号${$.IndexAll} ${$.nickName || $.UserName}】${$.jxFactoryReceive} (京喜工厂)\n`;
+			allReceiveMessage += `【账号${IndexAll} ${$.nickName || $.UserName}】${$.jxFactoryReceive} (京喜工厂)\n`;
 		}
 
 	}
@@ -425,23 +425,23 @@ async function showMsg() {
 			ReturnMessage += `【东东萌宠】${$.petInfo.goodsInfo.goodsName}已可领取!\n`;
 
 			if (userIndex1 != -1) {
-				ReceiveMessageGp1 += `【账号${$.IndexGp1} ${$.nickName || $.UserName}】${$.petInfo.goodsInfo.goodsName}可以兑换了! (东东萌宠)\n`;
+				ReceiveMessageGp1 += `【账号${IndexGp1} ${$.nickName || $.UserName}】${$.petInfo.goodsInfo.goodsName}可以兑换了! (东东萌宠)\n`;
 			}
 			if (userIndex2 != -1) {
-				ReceiveMessageGp2 += `【账号${$.IndexGp2} ${$.nickName || $.UserName}】${$.petInfo.goodsInfo.goodsName}可以兑换了! (东东萌宠)\n`;
+				ReceiveMessageGp2 += `【账号${IndexGp2} ${$.nickName || $.UserName}】${$.petInfo.goodsInfo.goodsName}可以兑换了! (东东萌宠)\n`;
 			}
 			if (userIndex1 == -1 && userIndex2 == -1) {
-				allReceiveMessage += `【账号${$.IndexAll} ${$.nickName || $.UserName}】${$.petInfo.goodsInfo.goodsName}可以兑换了! (东东萌宠)\n`;
+				allReceiveMessage += `【账号${IndexAll} ${$.nickName || $.UserName}】${$.petInfo.goodsInfo.goodsName}可以兑换了! (东东萌宠)\n`;
 			}
 		} else if ($.petInfo.petStatus === 6) {
 			if (userIndex1 != -1) {
-				ReceiveMessageGp1 += `【账号${$.IndexGp1} ${$.nickName || $.UserName}】未选择物品! (东东萌宠)\n`;
+				ReceiveMessageGp1 += `【账号${IndexGp1} ${$.nickName || $.UserName}】未选择物品! (东东萌宠)\n`;
 			}
 			if (userIndex2 != -1) {
-				ReceiveMessageGp2 += `【账号${$.IndexGp2} ${$.nickName || $.UserName}】未选择物品! (东东萌宠)\n`;
+				ReceiveMessageGp2 += `【账号${IndexGp2} ${$.nickName || $.UserName}】未选择物品! (东东萌宠)\n`;
 			}
 			if (userIndex1 == -1 && userIndex2 == -1) {
-				allWarnMessage += `【账号${$.IndexAll} ${$.nickName || $.UserName}】未选择物品! (东东萌宠)\n`;
+				allWarnMessage += `【账号${IndexAll} ${$.nickName || $.UserName}】未选择物品! (东东萌宠)\n`;
 			}
 		} else if (response.resultCode === '0') {
 			ReturnMessage += `【东东萌宠】${$.petInfo.goodsInfo.goodsName}`;
