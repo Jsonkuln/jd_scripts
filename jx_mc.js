@@ -7,14 +7,14 @@
 ============Quantumultx===============
 [task_local]
 #京喜牧场
-20 0-23/3 * * * jd_jxmc.js, tag=京喜牧场, img-url=https://github.com/58xinian/icon/raw/master/jdgc.png, enabled=true
+20 0-23/3 * * * jx_mc.js, tag=京喜牧场, img-url=https://github.com/58xinian/icon/raw/master/jdgc.png, enabled=true
 ================Loon==============
 [Script]
-cron "20 0-23/3 * * *" script-path=jd_jxmc.js,tag=京喜牧场
+cron "20 0-23/3 * * *" script-path=jx_mc.js,tag=京喜牧场
 ===============Surge=================
-京喜牧场 = type=cron,cronexp="20 0-23/3 * * *",wake-system=1,timeout=3600,script-path=jd_jxmc.js
+京喜牧场 = type=cron,cronexp="20 0-23/3 * * *",wake-system=1,timeout=3600,script-path=jx_mc.js
 ============小火箭=========
-京喜牧场 = type=cron,script-path=jd_jxmc.js, cronexpr="20 0-23/3 * * *", timeout=3600, enable=true
+京喜牧场 = type=cron,script-path=jx_mc.js, cronexpr="20 0-23/3 * * *", timeout=3600, enable=true
  */
 // prettier-ignore
 !function (t, r) { "object" == typeof exports ? module.exports = exports = r() : "function" == typeof define && define.amd ? define([], r) : t.CryptoJS = r() }(this, function () {
