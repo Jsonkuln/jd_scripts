@@ -192,7 +192,7 @@ async function getTaskInfo(type, projectId, assignmentId, helpType = '1', itemId
               if (data.code === "0" && data.data) {
                 if (data.data[0].status !== "2") {
                   await sign_interactive_done(type, data.data[0].projectId, data.data[0].assignmentId)
-                  await $.wait(2000)
+                  await $.wait((data.data[0].waitDuration * 1000) || 2000)
                   await interactive_reward(type, data.data[0].projectId, data.data[0].assignmentId)
                 } else {
                   console.log(`任务已完成`)
@@ -205,7 +205,7 @@ async function getTaskInfo(type, projectId, assignmentId, helpType = '1', itemId
                 console.log(`去做【${data.data[0].title}】`)
                 if (data.data[0].status !== "2") {
                   await interactive_accept(type, data.data[0].projectId, data.data[0].assignmentId, data.data[0].itemId)
-                  await $.wait(data.data[0].waitDuration)
+                  await $.wait((data.data[0].waitDuration * 1000) || 2000)
                   await qryViewkitCallbackResult(data.data[0].projectId, data.data[0].assignmentId, data.data[0].itemId)
                 } else {
                   console.log(`任务已完成`)
@@ -269,14 +269,14 @@ function interactive_done(type, projectId, assignmentId, itemId) {
           if (data) {
             data = JSON.parse(data)
             if (type === "2") {
-              if (data.code === "0") {
+              if (data.code === "0" && data.busiCode === "0") {
                 console.log(data.data.msg)
                 if (!data.data.success) $.canHelp = false
               } else {
                 console.log(data.message)
               }
             } else {
-              if (data.code === "0") {
+              if (data.code === "0" && data.busiCode === "0") {
                 console.log(data.data.rewardMsg)
               } else {
                 console.log(data.message)
@@ -327,7 +327,7 @@ function interactive_reward(type, projectId, assignmentId) {
         } else {
           if (data) {
             data = JSON.parse(data)
-            if (data.code === "0") {
+            if (data.code === "0" && data.busiCode === "0") {
               console.log(data.data.rewardMsg)
             } else {
               console.log(data.message)
@@ -377,7 +377,9 @@ async function qryViewkitCallbackResult(encryptProjectId, encryptAssignmentId, i
         } else {
           if (data) {
             data = JSON.parse(data)
-            console.log(`恭喜获得2个京豆`)
+            if (data.code === "0" || data.msg === "query success!") {
+              console.log(`恭喜获得2个京豆`)
+            }
           }
         }
       } catch (e) {
