@@ -41,7 +41,7 @@ async function main(id) {
         } catch (e) {}
         // $.code.push(validate)
         if (validate) {
-            fs.appendFile('./utils/jdvalidate.txt', validate + "\n", (error) => {
+            fs.appendFile('./jdvalidate.txt', validate + "\n", (error) => {
                 if (error) return console.log("追加文件失败" + error.message);
                 console.log("追加成功");
             })
