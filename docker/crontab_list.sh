@@ -82,8 +82,6 @@
 17 10 * 9,10 * node /scripts/jd_SeagateBrand.js >> /scripts/logs/jd_SeagateBrand.log 2>&1
 # 企有此礼
 30 0,14 * * * node /scripts/jd_qycl.js >> /scripts/logs/jd_qycl.log 2>&1
-#京东手机狂欢城
-0 0-18/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 #热血心跳,狂解压
 15 6,18 1-16,21-30 9,10 * node /scripts/jd_decompression.js >> /scripts/logs/jd_decompression.log 2>&1
 #东东游戏
