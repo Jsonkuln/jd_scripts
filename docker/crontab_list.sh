@@ -90,7 +90,8 @@
 16 10,20 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 #芥么签到
 11 7,15 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
-
+#芥么赚豪礼
+0 78,22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
