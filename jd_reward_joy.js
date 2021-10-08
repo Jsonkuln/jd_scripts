@@ -2,10 +2,10 @@
 new Env('宠汪汪积分兑换奖品')
 [task_local]
 #宠汪汪积分兑换奖品
-0,8,16 * * * jd_joy_reward.js, tag=宠汪汪积分兑换奖品, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png, enabled=true
+0 0,8,16 * * * jd_joy_reward.js, tag=宠汪汪积分兑换奖品, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdcww.png, enabled=true
 ==============Loon==============
 [Script]
-cron "0,8,16 * * *" script-path=jd_reward_joy.js,tag=宠汪汪积分兑换奖品
+cron "0 0,8,16 * * *" script-path=jd_reward_joy.js,tag=宠汪汪积分兑换奖品
  */
 let common = require("./utils/common");
 let $ = new common.env('宠汪汪兑换京豆');
