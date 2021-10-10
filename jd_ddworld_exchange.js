@@ -1,7 +1,7 @@
 
 /**
 东东世界兑换
-cron 0 9,19 * * * jd_ddworld_exchange.js
+cron 0 0 * * * jd_ddworld_exchange.js
 */
 const $ = new Env("东东世界兑换");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';

@@ -97,7 +97,7 @@
 #一加
 25 14 * * * node /scripts/jd_yijia.js >> /scripts/logs/jd_yijia.log 2>&
 #东东世界兑换
-0 9,19 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&
+0 0 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&
 
 ##############长期活动##############
 # 签到
