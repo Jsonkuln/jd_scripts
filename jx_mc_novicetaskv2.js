@@ -46,7 +46,7 @@ exports.__esModule = true;
 var axios_1 = require("axios");
 var TS_USER_AGENTS_1 = require("./TS_USER_AGENTS");
 var notify = require('./sendNotify');
-var A = require('./utils/jx_mcToken');
+var A = require('./utils/mcToken');
 var cookie = '', res = '', shareCodes = [], homePageInfo, activeid = '', jxToken, UserName, index;
 !(function () { return __awaiter(void 0, void 0, void 0, function () {
     var cookiesArr, i, _a, isLogin, nickName, lastgettime, food, petid, coins, _i, _b, day, taskRetCode;
