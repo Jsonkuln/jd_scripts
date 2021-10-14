@@ -89,9 +89,7 @@
 #芥么签到
 11 7,15 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 #芥么赚豪礼
-0 78,22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
-#美妆周年庆
-13 11,16 * * * node /scripts/jd_beauty_twelfth.js >> /scripts/logs/jd_beauty_twelfth.log 2>&1
+0 78,22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&11
 #海尔京东超级品牌日
 25 13 * * * node /scripts/jd_haier.js >> /scripts/logs/jd_haier.log 2>&1
 #一加
