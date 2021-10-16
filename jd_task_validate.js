@@ -24,7 +24,7 @@ eval(common.eval.mainEval($));
 async function prepare() {
     $.thread = 1;
     $.sleep *= 8;
-    await fs.writeFile('./jdvalidate.txt', '', (error) => {
+    await fs.writeFile('./utils/jdvalidate.txt', '', (error) => {
         if (error) return console.log("初始化失败" + error.message);
         console.log("初始化成功");
     })
