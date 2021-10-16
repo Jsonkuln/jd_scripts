@@ -1,6 +1,6 @@
 /*
 new Env('宠汪汪验证码获取')
-58 7,15,23 * * * jd_task_validate.js
+56 7,15,23 * * * jd_task_validate.js
 */
 let common = require("./utils/common");
 let $ = new common.env('京东验证码获取');
