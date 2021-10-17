@@ -90,8 +90,6 @@
 11 7,15 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 #芥么赚豪礼
 0 78,22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&11
-#海尔京东超级品牌日
-25 13 * * * node /scripts/jd_haier.js >> /scripts/logs/jd_haier.log 2>&1
 #一加
 25 14 * * * node /scripts/jd_yijia.js >> /scripts/logs/jd_yijia.log 2>&
 #东东世界兑换
@@ -106,8 +104,6 @@
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
-#MM领京豆
-21 9 * * * node /scripts/jd_MMdou.js >> /scripts/logs/jd_MMdou.log 2>&1
 # 东东超市兑换奖品
 0,30 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 摇京豆
@@ -171,7 +167,7 @@
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
 # 京喜财富岛
-30 * * * *  node /scripts/jx_cfd2.js >> /scripts/logs/jx_cfd2.log 2>&1
+30 * * * *  node /scripts/jx_cfd_loop.js >> /scripts/logs/jx_cfd_loop.log 2>&1
 # 京东极速版签到+赚现金任务
 15 0,3 * * *  node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
 # 京东抽奖机
