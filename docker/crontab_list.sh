@@ -167,7 +167,7 @@
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
 # 京喜财富岛
-30 * * * *  node /scripts/jx_cfd_loop.js >> /scripts/logs/jx_cfd_loop.log 2>&1
+30 * * * *  node /scripts/jd_cfd_loop.js >> /scripts/logs/jd_cfd_loop.log 2>&1
 # 京东极速版签到+赚现金任务
 15 0,3 * * *  node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
 # 京东抽奖机
