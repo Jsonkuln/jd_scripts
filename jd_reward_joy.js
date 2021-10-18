@@ -31,7 +31,7 @@ async function prepare() {
     //await $.timer("00 00 */8",120)
 }
 async function main(id) {
-    let txt = await fs.readFileSync('./utils/jdvalidate.txt', 'utf-8');
+    let txt = await fs.readFileSync('./jdvalidate.txt', 'utf-8');
     let lists = txt.split("\n");
     let validate = lists[id.index - 1];
     let params = {

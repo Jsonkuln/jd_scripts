@@ -100,7 +100,8 @@
 13 8,16 * * * node /scripts/jd_industrial_task.js >> /scripts/logs/jd_industrial_task.log 2>&
 # 攒金币 赢大礼
 22 0,8 * * * node /scripts/jd_GoldcoinToGift.js >> /scripts/logs/jd_GoldcoinToGift.log 2>&1
-
+# 京东小家
+30 10 * * * node /scripts/jd_chinaJoy.js >> /scripts/logs/jd_chinaJoy.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1

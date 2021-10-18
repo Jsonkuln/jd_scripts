@@ -24,7 +24,7 @@ eval(common.eval.mainEval($));
 async function prepare() {
     $.thread = 1;
     $.sleep *= 8;
-    await fs.writeFile('./utils/jdvalidate.txt', '', (error) => {
+    await fs.writeFile('./jdvalidate.txt', '', (error) => {
         if (error) return console.log("初始化失败" + error.message);
         console.log("初始化成功");
     })
@@ -41,7 +41,7 @@ async function main(id) {
         } catch (e) {}
         // $.code.push(validate)
         if (validate) {
-            fs.appendFile('./utils/jdvalidate.txt', validate + "\n", (error) => {
+            fs.appendFile('./jdvalidate.txt', validate + "\n", (error) => {
                 if (error) return console.log("追加文件失败" + error.message);
                 console.log("追加成功");
             })
