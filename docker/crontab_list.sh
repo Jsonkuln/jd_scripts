@@ -78,8 +78,6 @@
 45 0,12 * * * node /scripts/jd_senbeans.js >> /scripts/logs/jd_senbeans.log 2>&1
 # 希捷品牌日瓜分百万京豆
 17 10 * 9,10 * node /scripts/jd_SeagateBrand.js >> /scripts/logs/jd_SeagateBrand.log 2>&1
-# 企有此礼
-30 0,14 * * * node /scripts/jd_qycl.js >> /scripts/logs/jd_qycl.log 2>&1
 #热血心跳,狂解压
 15 6,18 1-16,21-30 9,10 * node /scripts/jd_decompression.js >> /scripts/logs/jd_decompression.log 2>&1
 #东东游戏
@@ -102,6 +100,8 @@
 22 0,8 * * * node /scripts/jd_GoldcoinToGift.js >> /scripts/logs/jd_GoldcoinToGift.log 2>&1
 #魔方兑换
 0 0 * * * node /scripts/jd_mofang_exchange.js >> /scripts/logs/jd_mofang_exchange.log 2>&1
+# 城城分现金
+5 0-23/6 * * * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -196,7 +196,7 @@
 # 宠汪汪积分兑换京豆
 0 0,8,16 * * * node /scripts/jd_reward_joy.js >> /scripts/logs/jd_reward_joy.log 2>&1
 # 宠汪汪积分兑换就有版
-0 0,8,16 * * *   node /scripts/jd_joy_reward_Mod.js >> /scripts/logs/jd_joy_reward_Mod.log 2>&1
+0 0,8,16 * * * node /scripts/jd_joy_reward_Mod.js >> /scripts/logs/jd_joy_reward_Mod.log 2>&1
 #宠汪汪验证码获取
 56 7,15,23 * * * node /scripts/jd_task_validate.js >> /scripts/logs/jd_task_validate.log 2>&1
 # 宠汪汪喂食
