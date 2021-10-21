@@ -60,8 +60,6 @@
 23 8,13 * * * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.log 2>&1
 #店铺签到
 30 9,16 * * * node /scripts/jd_ShopSign.js >> /scripts/logs/jd_ShopSign.log 2>&1
-#明星小店
-12 11 10-17 9 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 #王者荣耀投票
 23 8,9 22-31,1-5 8,9 * node /scripts/jd_king.js >> /scripts/logs/jd_king.log 2>&1
 #领券中心签到
@@ -80,22 +78,18 @@
 17 10 * 9,10 * node /scripts/jd_SeagateBrand.js >> /scripts/logs/jd_SeagateBrand.log 2>&1
 #热血心跳,狂解压
 15 6,18 1-16,21-30 9,10 * node /scripts/jd_decompression.js >> /scripts/logs/jd_decompression.log 2>&1
-#东东游戏
-35 12-23/4 * * * node /scripts/jd_ddgame.js >> /scripts/logs/jd_ddgame.log 2>&1
 #集魔方
 16 10,20 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
 #芥么签到
 11 7,15 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 #芥么赚豪礼
-0 78,22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&11
+0 78,22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
 #一加
-25 14 * * * node /scripts/jd_yijia.js >> /scripts/logs/jd_yijia.log 2>&
+25 14 * * * node /scripts/jd_yijia.js >> /scripts/logs/jd_yijia.log 2>&1
 #东东世界兑换
-0 0 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&
+0 0 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
 #幸运扭蛋
-11 13 * * * node /scripts/jd_lucky_egg.js >> /scripts/logs/jd_lucky_egg.log 2>&
-#京东工业品任务
-13 8,16 * * * node /scripts/jd_industrial_task.js >> /scripts/logs/jd_industrial_task.log 2>&
+11 13 * * * node /scripts/jd_lucky_egg.js >> /scripts/logs/jd_lucky_egg.log 2>&1
 # 攒金币 赢大礼
 22 0,8 * * * node /scripts/jd_GoldcoinToGift.js >> /scripts/logs/jd_GoldcoinToGift.log 2>&1
 #魔方兑换
@@ -106,6 +100,8 @@
 13 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 #环游记半残品
 13 0-23/2 * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
+# 预售福利机
+8 0,8 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
