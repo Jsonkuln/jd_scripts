@@ -102,6 +102,10 @@
 0 0 * * * node /scripts/jd_mofang_exchange.js >> /scripts/logs/jd_mofang_exchange.log 2>&1
 # 城城分现金
 5 0-23/6 * * * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
+#东东超市抢京豆
+13 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
+#环游记半残品
+13 0-23/2 * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
