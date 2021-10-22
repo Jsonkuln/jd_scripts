@@ -103,7 +103,7 @@
 #环游记半残品
 13 0-23/2 * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
 #美妆馆选品官
-27 9,13 * * * node /jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
+27 9,13 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
 
 ##############长期活动##############
 # 签到
