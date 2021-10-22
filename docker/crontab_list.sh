@@ -100,6 +100,8 @@
 13 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 # 预售福利机
 8 0,8 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
+#环游记半残品
+13 0-23/2 * * * node /scripts/jd_hyj.js >> /scripts/logs/jd_hyj.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
