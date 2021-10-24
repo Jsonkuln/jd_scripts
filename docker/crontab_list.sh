@@ -107,7 +107,7 @@
 # 手机狂欢城助力
 10 1,21 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
 # 电竞预言家
-30 0 * * * node /scripts/jd_djyyj.js >> /scripts/logs/jd_djyyj.log 2>&1
+23 10,12 * * * node /scripts/jd_lol.js >> /scripts/logs/jd_lol.log 2>&1
 
 ##############长期活动##############
 # 签到
