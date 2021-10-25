@@ -19,7 +19,15 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let inviteCodes = []
+let inviteCodes = [
+	'ZXASTT0205KkcCEliowyOaVqy9r9sFjRWn6u7zB55awQ',
+	'ZXASTT011-agqF1tGtBMFjRWn6u7zB55awQ',
+	'ZXASTT0225KkcRBgQ_FTTJh7wkKUIJwFjRWn6u7zB55awQ',
+	'ZXASTT018v_52Qxsa9lTQJxib1AFjRWn6u7zB55awQ',
+	'ZXASTT0225KkcRUsfpACCdk7wwPVZdAFjRWn6u7zB55awQ',
+	'ZXASTT0225KkcRRpI9VCCdhzwx_BcdgFjRWn6u7zB55awQ',
+	'ZXASTT0225KkcRxlK8VXXcR_8lPINcwFjRWn6u7zB55awQ',
+]
 $.shareCodesArr = [];
 
 !(async () => {
@@ -46,6 +54,24 @@ $.shareCodesArr = [];
 		$.nickName = '';
 		message = '';
 		console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+		await shareCodesFormat()
+		for (let i = 0; i < $.newShareCodes.length && true; ++i) {
+			console.log(`\n开始助力 【${$.newShareCodes[i]}】`)
+			let res = await getInfo($.newShareCodes[i])
+			if (res && res['data'] && res['data']['bizCode'] === 0) {
+				if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0] && res['data']['result']['toasts'][0]['status'] === '3') {
+					console.log(`助力次数已耗尽，跳出`)
+					break
+				}
+				if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0]) {
+					console.log(`助力 【${$.newShareCodes[i]}】:${res.data.result.toasts[0].msg}`)
+				}
+			}
+			if ((res && res['status'] && res['status'] === '3') || (res && res.data && res.data.bizCode === -11)) {
+			  // 助力次数耗尽 || 黑号
+			  break
+			}
+		 }
 		try {
 			await get_secretp()
 			
@@ -123,7 +149,7 @@ $.shareCodesArr = [];
 										console.log(`\n\n ${task.brandMemberVos[o].title}`)
 										memberUrl = task.brandMemberVos[o].memberUrl
 										memberUrl = transform(memberUrl)
-										//await join(task.brandMemberVos[o].vendorIds,memberUrl.channel,memberUrl.shopId ? memberUrl.shopId:"")
+										await join(task.brandMemberVos[o].vendorIds,memberUrl.channel,memberUrl.shopId ? memberUrl.shopId:"")
 										await travel_collectScore(task.brandMemberVos[o].taskToken,task.taskId)
 									}
 									
@@ -549,9 +575,9 @@ function shareCodesFormat() {
     // console.log(`第${$.index}个京东账号的助力码:::${$.shareCodesArr[$.index - 1]}`)
     $.newShareCodes = [];
     if ($.shareCodesArr[$.index - 1]) {
-      $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
+      $.newShareCodes = [...inviteCodes,...$.newShareCodes];
     }
-    if($.index == 1) $.newShareCodes = [...inviteCodes,...$.newShareCodes]
+    //if($.index == 1) $.newShareCodes = [...inviteCodes,...$.newShareCodes]
     console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
   })
