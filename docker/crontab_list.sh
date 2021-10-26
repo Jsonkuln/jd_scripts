@@ -14,8 +14,6 @@
 13 1,7,22 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log 2>&1
 # 东东健康社区收集能量
 5-45/20 * * * * node /scripts/jd_health_collect.js >> /scripts/logs/jd_health_collect.log 2>&1
-# 0元砍价
-30 */1 * * * node /scripts/jd_kanjia.js >> /scripts/logs/jd_kanjia.log 2>&1
 # 幸运大转盘
 4 10,19 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 #5g超级盲盒
@@ -53,7 +51,7 @@
 #发财大赢家
 10 7 * * * node /scripts/jd_fc.js >> /scripts/logs/jd_fc.log 2>&1
 #发财大赢家
-20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
+20 8-20/2 * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 #京喜领88元红包
 30 1,6,21 * * * node /scripts/jx_lhb.js >> /scripts/logs/jx_lhb.log 2>&1
 #特务Z
@@ -110,6 +108,10 @@
 23 10,12 * * * node /scripts/jd_lol.js >> /scripts/logs/jd_lol.log 2>&1
 # 潮玩儿制躁团
 30 11,22 * * * node /scripts/jd_zzt.js >> /scripts/logs/jd_zzt.log 2>&1
+# 惊喜欢乐砍
+0 17,21 * * * node /scripts/jd_kanjia2.js >> /scripts/logs/jd_kanjia2.log 2>&1
+# 京东极速版签到免单
+18 8,12,20 * * * node /scripts/jd_speed_signfree.js >> /scripts/logs/jd_speed_signfree.log 2>&1
 
 ##############长期活动##############
 # 签到
