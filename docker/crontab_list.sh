@@ -47,9 +47,7 @@
 #7月粉丝互动
 1 8 * * * node /scripts/jd_wxFans.js >> /scripts/logs/jd_wxFans.log 2>&1
 #发财大赢家
-#50 20 * * * node /scripts/jd_fcdyj.js >> /scripts/logs/jd_fcdyj.log 2>&1
-#发财大赢家
-10 7 * * * node /scripts/jd_fc.js >> /scripts/logs/jd_fc.log 2>&1
+1 6-22/6 * * * node /scripts/jd_fcdyj.js >> /scripts/logs/jd_fcdyj.log 2>&1
 #发财大赢家
 20 8-20/2 * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 #京喜领88元红包
