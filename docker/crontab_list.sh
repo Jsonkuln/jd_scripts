@@ -108,6 +108,8 @@
 0 17,21 * * * node /scripts/jd_kanjia2.js >> /scripts/logs/jd_kanjia2.log 2>&1
 # 京东极速版签到免单
 18 8,12,20 * * * node /scripts/jd_speed_signfree.js >> /scripts/logs/jd_speed_signfree.log 2>&1
+# 双十一无门槛红包
+1 6,12,18 * * * node /scripts/jd_RedEnvelope.js >> /scripts/logs/jd_RedEnvelope.log 2>&1
 
 ##############长期活动##############
 # 签到
