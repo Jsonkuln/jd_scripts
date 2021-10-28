@@ -102,8 +102,6 @@
 10 1,21 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
 # 电竞预言家
 23 10,12 * * * node /scripts/jd_lol.js >> /scripts/logs/jd_lol.log 2>&1
-# 潮玩儿制躁团
-30 11,22 * * * node /scripts/jd_zzt.js >> /scripts/logs/jd_zzt.log 2>&1
 # 惊喜欢乐砍
 0 17,21 * * * node /scripts/jd_kanjia2.js >> /scripts/logs/jd_kanjia2.log 2>&1
 # 京东极速版签到免单
