@@ -86,8 +86,6 @@
 11 13 * * * node /scripts/jd_lucky_egg.js >> /scripts/logs/jd_lucky_egg.log 2>&1
 #魔方兑换
 0 0 * * * node /scripts/jd_mofang_exchange.js >> /scripts/logs/jd_mofang_exchange.log 2>&1
-# 城城分现金
-5 0-23/6 * * * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 #东东超市抢京豆
 13 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 # 预售福利机
@@ -108,6 +106,8 @@
 1 6,12,18 * * * node /scripts/jd_RedEnvelope.js >> /scripts/logs/jd_RedEnvelope.log 2>&1
 # 极速版-发财挖宝
 20 7,12,16 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
+# 城城领现金换红包
+0 20 31 10 * node /scripts/jd_city_exchange.js >> /scripts/logs/jd_city_exchange.log 2>&1
 
 ##############长期活动##############
 # 签到
