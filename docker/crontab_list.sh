@@ -116,6 +116,8 @@
 15 6,14 * * * node /scripts/jd_aid_ftzy.js >> /scripts/logs/jd_aid_ftzy.log 2>&1
 #沸腾之夜
 0,30 19-23 * * * node /scripts/jd_hotNeight.js >> /scripts/logs/jd_hotNeight.log 2>&1
+#QQ星系牧场
+45 6-23/2 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -256,6 +258,8 @@
 33 7,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 #全民抢京豆
 33 0,23 * * * node /scripts/jd_qjd.js >> /scripts/logs/jd_qjd.log 2>&1
+#星推官
+30 0,19 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
 
 ##############默认注释活动##############
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
