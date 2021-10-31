@@ -110,6 +110,10 @@
 0 20 31 10 * node /scripts/jd_city_exchange.js >> /scripts/logs/jd_city_exchange.log 2>&1
 # 集魔力卡召唤大奖
 30 8,18 * * * node /scripts/jd_jika.js >> /scripts/logs/jd_jika.log 2>&1
+# 京东超级盒子
+24 8,21 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
+# 京东沸腾之夜助力
+15 6,14 * * * node /scripts/jd_aid_ftzy.js >> /scripts/logs/jd_aid_ftzy.log 2>&1
 
 ##############长期活动##############
 # 签到
