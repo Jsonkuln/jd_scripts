@@ -114,6 +114,8 @@
 24 8,21 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
 # 京东沸腾之夜助力
 15 6,14 * * * node /scripts/jd_aid_ftzy.js >> /scripts/logs/jd_aid_ftzy.log 2>&1
+#沸腾之夜
+0,30 19-23 * * * node /scripts/jd_hotNeight.js >> /scripts/logs/jd_hotNeight.log 2>&1
 
 ##############长期活动##############
 # 签到
