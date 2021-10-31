@@ -108,6 +108,8 @@
 20 7,12,16 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 # 城城领现金换红包
 0 20 31 10 * node /scripts/jd_city_exchange.js >> /scripts/logs/jd_city_exchange.log 2>&1
+# 集魔力卡召唤大奖
+30 8,18 * * * node /scripts/jd_jika.js >> /scripts/logs/jd_jika.log 2>&1
 
 ##############长期活动##############
 # 签到
