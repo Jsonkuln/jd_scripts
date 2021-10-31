@@ -1,9 +1,10 @@
 /**
     预约，匹配，脚本内互助
-0,30 19-23 * * * jd_hotNeight.js
+0,30 19-23 * * * jd_hotNeigh.js
  */
 const $ = new Env('沸腾之夜');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
