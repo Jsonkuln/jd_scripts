@@ -112,16 +112,9 @@
 30 8,18 * * * node /scripts/jd_jika.js >> /scripts/logs/jd_jika.log 2>&1
 # 京东超级盒子
 24 8,21 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
-# 京东沸腾之夜助力
-15 6,14 * * * node /scripts/jd_aid_ftzy.js >> /scripts/logs/jd_aid_ftzy.log 2>&1
-#沸腾之夜
-49 19-23 * * * node /scripts/jd_hotNeigh.js >> /scripts/logs/jd_hotNeigh.log 2>&1
 #QQ星系牧场
 45 6-23/2 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
-#沸腾之夜摇一摇
-2 21-23 * * * node /scripts/jd_neight2.js >> /scripts/logs/jd_neight2.log 2>&1
-#沸腾之夜开场红包
-1 21-23 * * * node /scripts/jd_neight1.js >> /scripts/logs/jd_neight1.log 2>&1
+
 
 ##############长期活动##############
 # 签到
