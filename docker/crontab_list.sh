@@ -108,8 +108,6 @@
 20 7,12,16 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 # 城城领现金换红包
 0 20 31 10 * node /scripts/jd_city_exchange.js >> /scripts/logs/jd_city_exchange.log 2>&1
-# 集魔力卡召唤大奖
-30 8,18 * * * node /scripts/jd_jika.js >> /scripts/logs/jd_jika.log 2>&1
 # 京东超级盒子
 24 8,21 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
 #QQ星系牧场
@@ -147,8 +145,6 @@
 10 7 1-31/7 * * node /scripts/jd_all_bean_change.js >> /scripts/logs/jd_all_bean_change.log 2>&1
 # 金融养猪
 12 * * * * node /scripts/jd_pigPet.js >> /scripts/logs/jd_pigPet.log 2>&1
-# 点点券
-#10 0-23/4 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 # 京喜工厂
 20 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 京喜工厂开团
