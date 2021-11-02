@@ -6,19 +6,19 @@
 // quantumultx
 [task_local]
 #京东抽奖机
-11 10 * * * https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_lotteryMachine.js, tag=京东抽奖机, img-url=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/jdlottery.png, enabled=true
+45 0,10 * * * https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_lotteryMachine.js, tag=京东抽奖机, img-url=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/jdlottery.png, enabled=true
 // Loon
 [Script]
-cron "11 10 * * *" script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_lotteryMachine.js,tag=京东抽奖机
+cron "45 0,10 * * *" script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_lotteryMachine.js,tag=京东抽奖机
 // Surge
-京东抽奖机 = type=cron,cronexp=11 10 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_lotteryMachine.js
+京东抽奖机 = type=cron,cronexp=45 0,10 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_lotteryMachine.js
  */
 const $ = new Env('京东抽奖机');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const STRSPLIT = "|";
 const needSum = false;            //是否需要显示汇总
 const printDetail = false;        //是否显示出参详情
-const appIdArr =['1EFRRxA','1EFRQwA','1EFRXxg','1E1NXxq0', '1ElBTx6o','1FV1VwKc','1FFRWxaY']
+const appIdArr =['1EFRRxA','1EFRQwA','1EFRXxg','1E1NXxq0', '1ElBTx6o','1FV1VwKc','1FFRWxaY','1FFVQyqw','1FFRWwqg','1FV1ZwKY','1FFRWxaY']
 const shareCodeArr = ['']
 const homeDataFunPrefixArr = ['interact_template','interact_template','interact_template','interact_template','interact_template','interact_template']
 const collectScoreFunPrefixArr = ['','','','','','','','','','','','','interact_template','interact_template']
