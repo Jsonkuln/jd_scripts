@@ -83,11 +83,9 @@ if ($.isNode()) {
       await $.wait(2000);
     }
   }
-  let res = await getAuthorShareCode('https://raw.githubusercontent.com/Aaron-lv/updateTeam/master/shareCodes/cfd.json')
+  let res = await getAuthorShareCode('https://raw.githubusercontent.com/yongyuanlin/cast/main/mast/cfd.json')
   if (!res) {
-    $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
-    await $.wait(1000)
-    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json')
+    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/yongyuanlin/cast@main/mast/cfd.json')
   }
   $.strMyShareIds = [...(res && res.shareId || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -951,7 +949,7 @@ async function getBuildInfo(body, buildList, type = true) {
             await getUserInfo(false)
             console.log(`升级建筑`)
             console.log(`【${buildNmae}】当前等级：${buildList.dwLvl}`)
-            console.log(`【${buildNmae}】升级需要${data.ddwNextLvlCostCoin}金币，保留升级需要的1倍${data.ddwNextLvlCostCoin * 3}金币，当前拥有${$.info.ddwCoinBalance}金币`)
+            console.log(`【${buildNmae}】升级需要${data.ddwNextLvlCostCoin}金币，保留升级需要的1倍${data.ddwNextLvlCostCoin * 1}金币，当前拥有${$.info.ddwCoinBalance}金币`)
             if(data.dwCanLvlUp > 0 && $.info.ddwCoinBalance >= (data.ddwNextLvlCostCoin * 1)) {
               console.log(`【${buildNmae}】满足升级条件，开始升级`)
               const body = `ddwCostCoin=${data.ddwNextLvlCostCoin}&strBuildIndex=${data.strBuildIndex}`
@@ -1176,11 +1174,11 @@ function getPropTask() {
           data = JSON.parse(data.replace(/\n/g, "").match(new RegExp(/jsonpCBK.?\((.*);*\)/))[1]);
           for (let key of Object.keys(data.Data.TaskList)) {
             let vo = data.Data.TaskList[key]
-            if (vo.dwCompleteNum < vo.dwTargetNum) {
+            if ((vo.dwCompleteNum < vo.dwTargetNum) && ![9, 11].includes(vo.dwPointType)) {
               await doTask(vo.ddwTaskId, 3)
               await $.wait(2000)
             } else {
-              if (vo.dwAwardStatus !== 1) {
+              if ((vo.dwCompleteNum >= vo.dwTargetNum) && vo.dwAwardStatus !== 1) {
                 console.log(`【${vo.strTaskName}】已完成，去领取奖励`)
                 await $.wait(2000)
                 await awardTask(2, vo)
@@ -1302,7 +1300,7 @@ function doTask(taskId, type = 1) {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} DoTask API请求失败，请检查网路重试`)
         } else {
-          data = JSON.parse(data.replace(/\n/g, "").match(new RegExp(/jsonpCBK.?\((.*);*\)/))[1]);
+          data = JSON.parse(data.match(new RegExp(/jsonpCBK.?\((.*);*/))[1]);
         }
       } catch (e) {
         $.logErr(e, resp)
@@ -1493,12 +1491,10 @@ function taskListUrl(function_path, body = '', bizCode = 'jxbfd') {
     }
   }
 }
-
 function getStk(url) {
   let arr = url.split('&').map(x => x.replace(/.*\?/, "").replace(/=.*/, ""))
   return encodeURIComponent(arr.filter(x => x).sort().join(','))
 }
-
 function randomString(e) {
   e = e || 32;
   let t = "0123456789abcdef", a = t.length, n = "";
@@ -1552,8 +1548,6 @@ function readShareCode() {
     resolve()
   })
 }
-//格式化助力码
-
 
 function TotalBean() {
   return new Promise(resolve => {
