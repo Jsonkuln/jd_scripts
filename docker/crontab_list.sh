@@ -106,16 +106,18 @@
 1 6,12,18 * * * node /scripts/jd_RedEnvelope.js >> /scripts/logs/jd_RedEnvelope.log 2>&1
 # 极速版-发财挖宝
 20 7,12,16 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
-# 城城领现金换红包
-0 20 31 10 * node /scripts/jd_city_exchange.js >> /scripts/logs/jd_city_exchange.log 2>&1
 # 京东超级盒子
 24 8,21 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
 #QQ星系牧场
 45 6-23/2 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
-#双11特务
-10 9,13,16,19,20 2-8 11 * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #手机竞猜
 10 7,10,20 * * * node /scripts/jd_sjjc.js >> /scripts/logs/jd_sjjc.log 2>&1
+#星推官
+30 0,19 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
+#星店长
+5 7,14,20 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
+#电器盲盒
+0 8,17 1-20 * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -254,12 +256,7 @@
 33 7,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 #全民抢京豆
 33 0,23 * * * node /scripts/jd_qjd.js >> /scripts/logs/jd_qjd.log 2>&1
-#星推官
-30 0,19 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
-#星店长
-5 7,14,20 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
-#电器盲盒
-0 8,17 1-20 * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
+
 
 ##############默认注释活动##############
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
