@@ -1,6 +1,6 @@
 /**
 
-30 * * * * jd_joyjd_open.js
+30 8,13,19 * * * jd_joyjd_open.js
  * */
 const $ = new Env('任务脚本');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';

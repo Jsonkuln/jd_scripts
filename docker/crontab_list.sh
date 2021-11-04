@@ -118,6 +118,10 @@
 5 7,14,20 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
 #电器盲盒
 0 8,17 1-20 * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
+#双11特务
+10 9,13,15,16,19,20 2-8 11 * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
+#任务脚本
+30 8,13,19 * * * node /scripts/jd_joyjd_open.js >> /scripts/logs/jd_joyjd_open.log 2>&1
 
 ##############长期活动##############
 # 签到

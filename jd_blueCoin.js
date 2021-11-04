@@ -19,7 +19,6 @@ cron "59 23 * * *" script-path=https://raw.githubusercontent.com/yongyuanlin/jd_
 ============小火箭=========
 东东超市兑换奖品 = type=cron,script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jd_blueCoin.js, cronexpr="59 23 * * *", timeout=3600, enable=true
  */
-
 const $ = new Env('东东超市兑换奖品');
 const notify = $.isNode() ? require('./sendNotify') : '';
 let allMessage = '';
@@ -254,7 +253,7 @@ function smtg_materialPrizeIndex(timeout = 0) {
         try {
           if (safeGet(data)) {
             data = JSON.parse(data);
-            if (data.data.bizCode && data.data.bizCode !== 0) {
+            if (data.data.bizCode !== 0) {
               $.beanerr = `${data.data.bizMsg}`;
               return
             }
@@ -292,12 +291,12 @@ function smtg_queryPrize(timeout = 0){
           if (safeGet(data)) {
             data = JSON.parse(data);
             // $.queryPrizeData = data;
-            if (data.data.bizCode && data.data.bizCode !== 0) {
+            if (data.data.bizCode !== 0) {
               console.log(`${data.data.bizMsg}\n`)
               $.beanerr = `${data.data.bizMsg}`;
               return
             }
-            if (data.data.bizCode && data.data.bizCode === 0) {
+            if (data.data.bizCode === 0) {
               const { areas } = data.data.result;
               const prizes = areas.filter(vo => vo['type'] === 4);
               if (prizes && prizes[0]) {
@@ -357,17 +356,17 @@ function smtg_obtainPrize(prizeId, timeout = 0, functionId = 'smt_exchangePrize'
           if (safeGet(data)) {
             data = JSON.parse(data);
             $.data = data;
-            if ($.data.data.bizCode && ($.data.data.bizCode !== 0 && $.data.data.bizCode !== 400)) {
+            if ($.data.data.bizCode !== 0 && $.data.data.bizCode !== 400) {
               $.beanerr = `${$.data.data.bizMsg}`;
               //console.log(`【京东账号${$.index}】${$.nickName} 换取京豆失败：${$.data.data.bizMsg}`)
               return
             }
-            if ($.data.data.bizCode && $.data.data.bizCode === 400) {
+            if ($.data.data.bizCode === 400) {
               $.errBizCodeCount ++;
               console.log(`debug 兑换京豆活动火爆次数:${$.errBizCodeCount}`);
               return
             }
-            if ($.data.data.bizCode && $.data.data.bizCode === 0) {
+            if ($.data.data.bizCode === 0) {
               if (`${coinToBeans}` === '1000') {
                 $.beanscount ++;
                 console.log(`【京东账号${$.index}】${$.nickName || $.UserName} 第${$.data.data.result.count}次换${$.title}成功`)
@@ -404,7 +403,7 @@ function smtgHome() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             // console.log(data)
-            if (data.data.bizCode && data.data.bizCode === 0) {
+            if (data.data.bizCode === 0) {
               const { result } = data.data;
               $.totalBlue = result.totalBlue;
               console.log(`【总蓝币】${$.totalBlue}个\n`);

@@ -8,17 +8,17 @@
 ============Quantumultx===============
 [task_local]
 #签到领现金
-2 0-23/4 * * * jd_cash.js, tag=签到领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+2 0-23/6 * * * jd_cash.js, tag=签到领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "2 0-23/4 * * *" script-path=jd_cash.js,tag=签到领现金
+cron "2 0-23/6 * * *" script-path=jd_cash.js,tag=签到领现金
 
 ===============Surge=================
-签到领现金 = type=cron,cronexp="2 0-23/4 * * *",wake-system=1,timeout=3600,script-path=jd_cash.js
+签到领现金 = type=cron,cronexp="2 0-23/6 * * *",wake-system=1,timeout=3600,script-path=jd_cash.js
 
 ============小火箭=========
-签到领现金 = type=cron,script-path=jd_cash.js, cronexpr="2 0-23/4 * * *", timeout=3600, enable=true
+签到领现金 = type=cron,script-path=jd_cash.js, cronexpr="2 0-23/6 * * *", timeout=3600, enable=true
  */
 const $ = new Env('签到领现金');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -31,8 +31,7 @@ let helpAuthor = true;
 const randomCount = $.isNode() ? 5 : 5;
 let cash_exchange = false;//是否消耗2元红包兑换200京豆，默认否
 const inviteCodes = [
-  `eU9Yau3kZ_4g-DiByHEQ0A@ZnQya-i1Y_UmpGzUnnEX@fkFwauq3ZA@f0JyJuW7bvQ@IhM0bu-0b_kv8W6E@eU9YKpnxOLhYtQSygTJQ@-oaWtXEHOrT_bNMMVso@eU9YG7XaD4lXsR2krgpG@KxMzZOW7YvQ@eU9Ya7jnZP5w822BmntC0g@eU9YPa34F5lnpBWRjyp3@eU9YarnmYfRwpTzUziAV1Q`,
-  `eU9Yau3kZ_4g-DiByHEQ0A@ZnQya-i1Y_UmpGzUnnEX@fkFwauq3ZA@f0JyJuW7bvQ@IhM0bu-0b_kv8W6E@eU9YKpnxOLhYtQSygTJQ@-oaWtXEHOrT_bNMMVso@eU9YG7XaD4lXsR2krgpG@KxMzZOW7YvQ@eU9Ya7jnZP5w822BmntC0g@eU9YPa34F5lnpBWRjyp3@eU9YarnmYfRwpTzUziAV1Q`,
+  ``,
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -52,7 +51,7 @@ let allMessage = '';
   await requireConfig()
   $.authorCode = await getAuthorShareCode('https://raw.githubusercontent.com/yongyuanlin/cast/main/mast/jd_updateCash.json')
   if (!$.authorCode) {
-    $.authorCode = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/yongyuanlin/cast@main/mast/jd_updateCash.json') || []
+  $.authorCode = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/yongyuanlin/cast@main/mast/jd_updateCash.json') || []
   }
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -94,8 +93,8 @@ async function jdCash() {
 
   await shareCodesFormat()
   // await helpFriends()
-  await getReward()
-  await getReward('2');
+  // await getReward()
+  // await getReward('2');
   $.exchangeBeanNum = 0;
   cash_exchange = $.isNode() ? (process.env.CASH_EXCHANGE ? process.env.CASH_EXCHANGE : `${cash_exchange}`) : ($.getdata('cash_exchange') ? $.getdata('cash_exchange') : `${cash_exchange}`);
   // if (cash_exchange === 'true') {
@@ -307,11 +306,11 @@ async function appdoTask(type,taskInfo) {
         } else {
           if (safeGet(data)) {
             data = JSON.parse(data);
-            if( data.code === 0){
+            if(data.code === 0) {
               console.log(`任务完成成功`)
               // console.log(data.data.result.taskInfos)
-            }else{
-              console.log(data)
+            } else {
+              console.log(JSON.stringify(data))
             }
           }
         }
@@ -444,13 +443,11 @@ function getSign(functionid, body, uuid) {
       "client":"apple",
       "clientVersion":"10.1.0"
     }
-    let HostArr = ['jdsign.cf', 'signer.nz.lu']
-    let Host = HostArr[Math.floor((Math.random() * HostArr.length))]
     let options = {
       url: `https://cdn.nz.lu/ddo`,
       body: JSON.stringify(data),
       headers: {
-        Host,
+        "Host": "jdsign.cf",
         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
       },
       timeout: 30 * 1000
@@ -458,7 +455,7 @@ function getSign(functionid, body, uuid) {
     $.post(options, (err, resp, data) => {
       try {
         if (err) {
-          console.log(`${JSON.stringify(err)}`)
+          console.log(JSON.stringify(err))
           console.log(`${$.name} getSign API请求失败，请检查网路重试`)
         } else {
 
