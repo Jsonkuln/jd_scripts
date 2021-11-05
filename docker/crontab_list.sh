@@ -120,6 +120,10 @@
 10 9,13,15,16,19,20 2-8 11 * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #任务脚本
 30 8,13,19 * * * node /scripts/jd_joyjd_open.js >> /scripts/logs/jd_joyjd_open.log 2>&1
+#热血心跳,狂解压
+10 9,17 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
+#双十一无门槛
+0 10,12,20 * * * node /scripts/jd_jxred.js >> /scripts/logs/jd_jxred.log 2>&1
 
 ##############长期活动##############
 # 签到
