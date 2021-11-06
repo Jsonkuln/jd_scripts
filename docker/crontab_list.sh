@@ -124,6 +124,8 @@
 10 9,17 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 #双十一无门槛
 0 10,12,20 * * * node /scripts/jd_jxred.js >> /scripts/logs/jd_jxred.log 2>&1
+#双11环游记大富翁
+0 16 1-11 11 * node /scripts/jd_travel_shop.js >> /scripts/logs/jd_travel_shop.log 2>&1
 
 ##############长期活动##############
 # 签到
