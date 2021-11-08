@@ -117,13 +117,15 @@
 #双11特务
 10 9-20 2-8 11 * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #任务脚本
-30 8,13,19 * * * node /scripts/jd_joyjd_open.js >> /scripts/logs/jd_joyjd_open.log 2>&1
+30 8,13,21 * * * node /scripts/jd_open.js >> /scripts/logs/jd_open.log 2>&1
 #热血心跳,狂解压
 10 9,17 * * * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 #双十一无门槛
 0 10,12,20 * * * node /scripts/jd_jxred.js >> /scripts/logs/jd_jxred.log 2>&1
 #双11环游记大富翁
 0 16 1-11 11 * node /scripts/jd_travel_shop.js >> /scripts/logs/jd_travel_shop.log 2>&1
+#赚京豆
+10 7,12,22 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 
 ##############长期活动##############
 # 签到
