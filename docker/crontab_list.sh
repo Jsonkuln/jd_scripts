@@ -114,8 +114,6 @@
 5 7,14,20 * * * node /scripts/jd_xtg.js >> /scripts/logs/jd_xtg.log 2>&1
 #电器盲盒
 0 8,17 1-20 * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
-#双11特务
-10 9-20 2-8 11 * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #任务脚本
 30 8,13,21 * * * node /scripts/jd_open.js >> /scripts/logs/jd_open.log 2>&1
 #热血心跳,狂解压
@@ -130,7 +128,8 @@
 50 7,15,23 * * * node /scripts/jd_work_invokeKey.js >> /scripts/logs/jd_work_invokeKey.log 2>&1
 #京东1111红包雨
 1 19-23 6-11 11 * node /scripts/jd_work_hby.js >> /scripts/logs/jd_work_hby.log 2>&1
-
+#京东饭粒
+30 8,21 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 
 
 ##############长期活动##############
