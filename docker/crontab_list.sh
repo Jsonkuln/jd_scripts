@@ -126,6 +126,12 @@
 0 16 1-11 11 * node /scripts/jd_travel_shop.js >> /scripts/logs/jd_travel_shop.log 2>&1
 #赚京豆
 10 7,12,22 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
+#京东invokeKey获取
+50 7,15,23 * * * node /scripts/jd_work_invokeKey.js >> /scripts/logs/jd_work_invokeKey.log 2>&1
+#京东1111红包雨
+1 19-23 6-11 11 * node /scripts/jd_work_hby.js >> /scripts/logs/jd_work_hby.log 2>&1
+
+
 
 ##############长期活动##############
 # 签到
