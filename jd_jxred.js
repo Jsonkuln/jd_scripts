@@ -6,7 +6,7 @@ cron 0 10,12,20 * * * jd_jxred.js
 const $ = new Env('双11红包');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
-const flCode = $.isNode() ? (process.env.FLCODE ? process.env.FLCODE : 'yK0YTiX'):'yK0YTiX';
+const flCode = $.isNode() ? (process.env.FLCODE ? process.env.FLCODE : '2LdKx9f'):'2LdKx9f';
 let cookiesArr = [];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
