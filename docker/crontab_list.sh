@@ -130,8 +130,6 @@
 5 6-18/6 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log 2>&1
 # 京东种豆得豆
 0  */6 * * * node /scripts/jd_plantBean.js >> /scripts/logs/jd_plantBean.log 2>&1
-# 京东全民开红包
-8 0,12,21 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
 # 进店领豆
 10 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
 # 京东天天加速
@@ -178,8 +176,12 @@
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
 # 京喜财富岛
 30 * * * *  node /scripts/jx_cfd_loop.js >> /scripts/logs/jx_cfd_loop.log 2>&1
-# 京东极速版签到+赚现金任务
-15 0,3 * * *  node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
+# 京东极速版任务1
+0 6-16/2 * * *  node /scripts/jd_speed_sign_Part1.js >> /scripts/logs/jd_speed_sign_Part1.log 2>&1
+# 京东极速版任务2
+20 6-15/2 * * *  node /scripts/jd_speed_sign_Part2.js >> /scripts/logs/jd_speed_sign_Part2.log 2>&1
+# 京东极速版任务3
+40 11-20/2 * * *  node /scripts/jd_speed_sign_Part3.js >> /scripts/logs/jd_speed_sign_Part3.log 2>&1
 # 京东抽奖机
 45 0,10 * * *  node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 京东摇京豆
@@ -250,8 +252,6 @@
 20 8 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 #积分换话费
 33 7,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
-#全民抢京豆
-33 0,23 * * * node /scripts/jd_qjd.js >> /scripts/logs/jd_qjd.log 2>&1
 
 
 ##############默认注释活动##############
