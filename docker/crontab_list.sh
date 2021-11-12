@@ -88,14 +88,8 @@
 0 0 * * * node /scripts/jd_mofang_exchange.js >> /scripts/logs/jd_mofang_exchange.log 2>&1
 #东东超市抢京豆
 13 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
-# 预售福利机
-8 0,8 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
 #美妆馆选品官
 27 9,13 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
-# 手机狂欢城
-0 0-18/6,21 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
-# 手机狂欢城助力
-10 1,21 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
 # 惊喜欢乐砍
 0 17,21 * * * node /scripts/jd_kanjia2.js >> /scripts/logs/jd_kanjia2.log 2>&1
 # 京东极速版签到免单
@@ -118,7 +112,8 @@
 10 7,12,22 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 #京东饭粒
 30 8,21 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
-
+#邀请有礼
+5 14 * * * node /scripts/jd_yqyl.js >> /scripts/logs/jd_yqyl.log 2>&1
 
 ##############长期活动##############
 # 签到
