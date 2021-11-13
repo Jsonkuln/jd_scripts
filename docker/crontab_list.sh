@@ -100,8 +100,6 @@
 24 8,21 * * * node /scripts/jd_cjhz.js >> /scripts/logs/jd_cjhz.log 2>&1
 #QQ星系牧场
 45 6-23/2 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
-#手机竞猜
-10 7,10,20 * * * node /scripts/jd_sjjc.js >> /scripts/logs/jd_sjjc.log 2>&1
 #电器盲盒
 0 8,17 1-20 * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
 #任务脚本
@@ -175,13 +173,9 @@
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
 # 京喜财富岛
-30 * * * *  node /scripts/jx_cfd_loop.js >> /scripts/logs/jx_cfd_loop.log 2>&1
-# 京东极速版任务1
-0 6-16/2 * * *  node /scripts/jd_speed_sign_Part1.js >> /scripts/logs/jd_speed_sign_Part1.log 2>&1
-# 京东极速版任务2
-20 6-15/2 * * *  node /scripts/jd_speed_sign_Part2.js >> /scripts/logs/jd_speed_sign_Part2.log 2>&1
-# 京东极速版任务3
-40 11-20/2 * * *  node /scripts/jd_speed_sign_Part3.js >> /scripts/logs/jd_speed_sign_Part3.log 2>&1
+30 * * * * node /scripts/jx_cfd_loop.js >> /scripts/logs/jx_cfd_loop.log 2>&1
+# 京东极速版任务
+20 0-23/2 * * * node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
 # 京东抽奖机
 45 0,10 * * *  node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 京东摇京豆
