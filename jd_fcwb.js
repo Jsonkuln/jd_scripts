@@ -1,14 +1,8 @@
 /*
-发财挖宝
-更新时间：2021-10-30
-活动入口：极速版-发财挖宝
-变量格式  多账号邀请码用@隔开
-export fcwbinviteCode=''
-export fcwbinviter=''
-export fcwbroud=1  ##挖宝场次 1初级2中级3高级
-运行一次即可看到助力码 直接输出的变量格式 直接复制在配置里
-如果没有自动挖那就是写错了 自己手挖吧
-入口：极速版 挖财寻宝
+发财挖宝: 入口,极速版-我的,发财挖宝
+说明
+    1、脚本只执行助力和做1个任务,需要手动进活动进行游戏
+    2、第一个账号会助力作者，其他账号助力第一个CK
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 ============Quantumultx===============
 [task_local]
@@ -29,7 +23,7 @@ const $ = new Env('发财挖宝');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
-let link = `yCcpwTLIbY6pjaM42ACUVg`;
+let link = `pTTvJeSTrpthgk9ASBVGsw`;
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
