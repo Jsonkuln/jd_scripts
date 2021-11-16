@@ -56,8 +56,6 @@
 23 8,13 * * * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.log 2>&1
 #店铺签到
 30 9,16 * * * node /scripts/jd_ShopSign.js >> /scripts/logs/jd_ShopSign.log 2>&1
-#王者荣耀投票
-23 8,9 22-31,1-5 8,9 * node /scripts/jd_king.js >> /scripts/logs/jd_king.log 2>&1
 #领券中心签到
 15 7 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
 #东东泡泡大战
@@ -66,8 +64,6 @@
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 #京喜财富岛合成月饼
 10 * * * * node /scripts/jx_cfd_mooncake.js >> /scripts/logs/jx_cfd_mooncake.log 2>&1
-# 母婴-跳跳乐
-1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 送豆得豆
 45 0,12 * * * node /scripts/jd_senbeans.js >> /scripts/logs/jd_senbeans.log 2>&1
 # 希捷品牌日瓜分百万京豆
@@ -78,16 +74,12 @@
 11 7,15 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 #芥么赚豪礼
 0 78,22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
-#一加
-25 14 * * * node /scripts/jd_yijia.js >> /scripts/logs/jd_yijia.log 2>&1
 #东东世界兑换
 0 0 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
 #幸运扭蛋
 11 13 * * * node /scripts/jd_lucky_egg.js >> /scripts/logs/jd_lucky_egg.log 2>&1
 #魔方兑换
 0 0 * * * node /scripts/jd_mofang_exchange.js >> /scripts/logs/jd_mofang_exchange.log 2>&1
-#东东超市抢京豆
-13 0,9 * * * node /scripts/jd_fission.js >> /scripts/logs/jd_fission.log 2>&1
 #美妆馆选品官
 27 9,13 * * * node /scripts/jd_selectionOfficer.js >> /scripts/logs/jd_selectionOfficer.log 2>&1
 # 惊喜欢乐砍
@@ -175,7 +167,7 @@
 # 京喜财富岛
 30 * * * * node /scripts/jx_cfd_loop.js >> /scripts/logs/jx_cfd_loop.log 2>&1
 # 京东极速版任务
-20 0-23/2 * * * node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
+20 0-23/6 * * * node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
 # 京东抽奖机
 45 0,10 * * *  node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 京东摇京豆
