@@ -30,8 +30,6 @@
 0 10 * * * node /scripts/jd_yqyl.js >> /scripts/logs/jd_yqyl.log 2>&1
 #入口为极速版 百元生活费 赚金币 邀请好友
 25 8 * * * node /scripts/jd_jszjb.js >> /scripts/logs/jd_jszjb.log 2>&1
-#半点京豆雨
-30 16-23/1 * * * node /scripts/jd_long_half_redrain.js >> /scripts/logs/jd_long_half_redrain.log 2>&1
 #整点京豆雨
 0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #京东直播
@@ -102,6 +100,10 @@
 5 14 * * * node /scripts/jd_yqyl.js >> /scripts/logs/jd_yqyl.log 2>&1
 #答题
 9 10 * * * node /scripts/jd_dt.js >> /scripts/logs/jd_dt.log 2>&1
+#京东金榜
+13 13 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
+#京东签到翻牌
+8 8 * * * node /scripts/jd_sign_flop.js >> /scripts/logs/jd_sign_flop.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -236,6 +238,8 @@
 33 7,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 #京粉
 30 0,6-23 * * * node /scripts/jd_jingfen.js >> /scripts/logs/jd_jingfen.log 2>&1
+#京东赚京豆一分钱抽奖
+30 7 * * * node /scripts/jd_lottery_drew.js >> /scripts/logs/jd_lottery_drew.log 2>&1
 
 ##############默认注释活动##############
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
