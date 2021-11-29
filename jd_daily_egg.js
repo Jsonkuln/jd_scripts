@@ -69,12 +69,12 @@ if ($.isNode()) {
     }
   }
 })()
-  .catch((e) => {
-    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-  })
-  .finally(() => {
-    $.done();
-  })
+    .catch((e) => {
+      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+    })
+    .finally(() => {
+      $.done();
+    })
 async function jdDailyEgg() {
   await toDailyHome()
   if ($.stopNext) return
@@ -106,7 +106,7 @@ async function doTask(funcMissionId = null) {
           return
         }
         break
-      // 正在做
+        // 正在做
       case 0:
         var tempBody = {}
         Object.assign(tempBody, { missionId: doLink.getValByKey("missionId"), readTime: +(doLink.getValByKey("readTime") || "-1") })
@@ -130,7 +130,7 @@ async function doTask(funcMissionId = null) {
           return
         }
         break
-      // 领奖状态
+        // 领奖状态
       case 1:
         awards = awards[0] ?? awards
         let { awardRealNum, awardName } = awards
@@ -141,7 +141,7 @@ async function doTask(funcMissionId = null) {
         msg.push(res.code === "0000" ? `成功！获得${awardRealNum}${awardName.replace(/^个?/, "个")}` : `失败！原因：${res.msg}`)
         console.log(msg.join(""))
         break
-      // 已完成
+        // 已完成
       case 2:
       default:
     }
