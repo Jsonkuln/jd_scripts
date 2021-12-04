@@ -149,7 +149,7 @@
 # 领京豆额外奖励(每日可获得3京豆)
 23 1,12,22 * * * node /scripts/jd_bean_home.js >> /scripts/logs/jd_bean_home.log 2>&1
 # 微信小程序京东赚赚
-30 0,1 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
+30 11,20 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
 # 京东汽车旅程赛点兑换金豆
 0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
 # 导到所有互助码
@@ -198,6 +198,8 @@
 13 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1 
 #汪汪乐园开工位
 20 9 */7 * * node /scripts/jd_joypark_open.js >> /scripts/jd_joypark_open.log 2>&1
+#汪汪乐园提现
+15 10 * * * node /scripts/jd_joypark_tx.js >> /scripts/jd_joypark_tx.log 2>&1
 #汪汪乐园养joy
 20 0-23/3 * * * node /scripts/jd_joypark_joy.js >> /scripts/jd_joypark_joy.log 2>&1
 #汪汪乐园每日任务
