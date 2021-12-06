@@ -108,6 +108,8 @@
 15 15 * * * node /scripts/jd_dnpj.js >> /scripts/logs/jd_dnpj.log 2>&1
 #京东生鲜每日抽奖
 15 0 * * * node /scripts/jd_sxLottery.js >> /scripts/logs/jd_sxLottery.log 2>&1
+#骁龙
+10 9,17 * * * node /scripts/jd_xiaolong.js >> /scripts/logs/jd_xiaolong.log 2>&1
 
 ##############长期活动##############
 # 签到
