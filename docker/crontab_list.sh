@@ -102,8 +102,6 @@
 9 10 * * * node /scripts/jd_dt.js >> /scripts/logs/jd_dt.log 2>&1
 #京东金榜
 13 13 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
-#京东签到翻牌
-8 8 * * * node /scripts/jd_sign_flop.js >> /scripts/logs/jd_sign_flop.log 2>&1
 #电脑配件
 15 15 * * * node /scripts/jd_dnpj.js >> /scripts/logs/jd_dnpj.log 2>&1
 #京东生鲜每日抽奖
@@ -112,6 +110,8 @@
 10 9,17 * * * node /scripts/jd_xiaolong.js >> /scripts/logs/jd_xiaolong.log 2>&1
 #金榜年终奖
 10 0,12 * * * node /scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
+#京东我的理想家
+40 7 * * *  node /scripts/jd_lxLottery.js >> /scripts/logs/jd_lxLottery.log 2>&1
 
 ##############长期活动##############
 # 签到
