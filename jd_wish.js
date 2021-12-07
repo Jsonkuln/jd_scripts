@@ -25,8 +25,8 @@ let message = '', allMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let appIdArr = ['1E1NXxq0', '1FFVQyqw','1EFVXxg'];
-let appNameArr = ['众筹许愿池', '1111点心动','金榜年终奖'];
+let appIdArr = ['1E1NXxq0', '1FFVQyqw'];
+let appNameArr = ['众筹许愿池', '1111点心动'];
 let appId, appName;
 $.shareCode = [];
 if ($.isNode()) {
@@ -72,7 +72,10 @@ if ($.isNode()) {
     if ($.isNode()) await notify.sendNotify($.name, allMessage);
     $.msg($.name, '', allMessage)
   }
-  let res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/yongyuanlin/cast@main/mast/wish.json')
+  let res = await getAuthorShareCode('https://raw.githubusercontent.com/yongyuanlin/cast/main/mast/wish.json')
+  if (!res) {
+    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/yongyuanlin/cast@main/mast/wish.json')
+  }
   $.shareCode = [...$.shareCode, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -191,7 +194,7 @@ async function healthyDay_getHomeData(type = true) {
                         if ($.complete) break;
                       }
                     }
-                  } else if (vo.taskType === 14 || vo.taskType === 6) {
+                  } else if (vo.taskType === 14) {
                     console.log(`【京东账号${$.index}（${$.UserName}）的${appName}好友互助码】${vo.assistTaskDetailVo.taskToken}\n`)
                     if (vo.times !== vo.maxTimes) {
                       $.shareCode.push({
@@ -258,7 +261,7 @@ function harmony_collectScore(body = {}, taskType = '') {
 }
 function interact_template_getLotteryResult() {
   return new Promise(resolve => {
-    $.post(taskUrl(appId == '1EFVXxg' ? 'splitHongbao_getLotteryResult' : 'interact_template_getLotteryResult', {"appId":appId}), (err, resp, data) => {
+    $.post(taskUrl('interact_template_getLotteryResult', {"appId":appId}), (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
