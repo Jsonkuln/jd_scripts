@@ -110,6 +110,8 @@
 15 0 * * * node /scripts/jd_sxLottery.js >> /scripts/logs/jd_sxLottery.log 2>&1
 #骁龙
 10 9,17 * * * node /scripts/jd_xiaolong.js >> /scripts/logs/jd_xiaolong.log 2>&1
+#金榜年终奖
+10 0,12 * * * node /scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -246,8 +248,6 @@
 33 7,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 #京粉
 30 0,6-23 * * * node /scripts/jd_jingfen.js >> /scripts/logs/jd_jingfen.log 2>&1
-#京东赚京豆一分钱抽奖
-30 7 * * * node /scripts/jd_lottery_drew.js >> /scripts/logs/jd_lottery_drew.log 2>&1
 
 ##############默认注释活动##############
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
