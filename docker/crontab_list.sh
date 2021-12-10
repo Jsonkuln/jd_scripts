@@ -110,6 +110,10 @@
 10 0,12 * * * node /scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
 #京东我的理想家
 40 7 * * *  node /scripts/jd_lxLottery.js >> /scripts/logs/jd_lxLottery.log 2>&1
+#暖暖红包
+0 0,20 * * *  node /scripts/jd_redEnvelope.js >> /scripts/logs/jd_redEnvelope.log 2>&1
+#京东赚京豆一分钱抽奖
+20 0,20 * * * node /scripts/jd_lottery_drew.js >> /scripts/logs/jd_lottery_drew.log 2>&1
 
 ##############长期活动##############
 # 签到
