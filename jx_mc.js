@@ -77,7 +77,10 @@ if ($.isNode()) {
         }
         await $.wait(2000);
     }
-
+    if(new Date().getHours() !== 9 && new Date().getHours() !== 16){
+        console.log('\n脚本早上9点到16点直接执行，才会执行账号内互助');
+        return ;
+    }
     console.log('\n##################开始账号内互助#################\n');
     for (let j = 0; j < cookiesArr.length; j++) {
         $.cookie = cookiesArr[j];
@@ -104,7 +107,7 @@ if ($.isNode()) {
                 //console.log(JSON.stringify(data))
                 $.canHelp = false;
             }
-            await $.wait(2000);
+            await $.wait(3000);
         }
     }
 })().catch((e) => {$.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')}).finally(() => {$.done();})
@@ -132,11 +135,11 @@ async function main() {
         let runTime = 0;
         let doMainTaskInfo = {};
         do {
-            await $.wait(2000);
+            await $.wait(3000);
             console.log(`\n执行初始化任务：${homePageInfo.maintaskId}`);
             doMainTaskInfo = await takeRequest(`jxmc`,`operservice/DoMainTask`,`&step=${homePageInfo.maintaskId}`,`activeid%2Cactivekey%2Cchannel%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Cstep%2Ctimestamp`,true);
             console.log(`执行结果：\n${JSON.stringify(doMainTaskInfo)}`);
-            await $.wait(2000);
+            await $.wait(3000);
             homePageInfo = await takeRequest(`jxmc`,`queryservice/GetHomePageInfo`,`&isgift=1&isquerypicksite=1&isqueryinviteicon=1`,`activeid%2Cactivekey%2Cchannel%2Cisgift%2Cisqueryinviteicon%2Cisquerypicksite%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp`,true);
             runTime++;
         }while (homePageInfo.maintaskId !== 'pause' && runTime<30 && JSON.stringify(doMainTaskInfo) !== '{}');
@@ -149,7 +152,7 @@ async function main() {
             console.log(`开始收鸡蛋`);
             let getEggInfo = await takeRequest(`jxmc`,`operservice/GetSelfResult`,`&type=11&itemid=${onepetInfo.petid}`,`activeid%2Cactivekey%2Cchannel%2Citemid%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp%2Ctype`,true);
             console.log(`成功收取${getEggInfo.addnum || null}个蛋,现有鸡蛋${getEggInfo.newnum || null}个`);
-            await $.wait(1000);
+            await $.wait(3000);
         }
     }
     if (!homePageInfo.petinfo) {
@@ -157,11 +160,15 @@ async function main() {
         return;
     }
     console.log(`获取获得详情成功,总共有小鸡：${petidList.length}只,鸡蛋:${homePageInfo.eggcnt}个,金币:${homePageInfo.coins},互助码：${homePageInfo.sharekey}`);
+    if(!petidList || petidList.length === 0){
+        console.log(`账号内没有小鸡，暂停执行`);
+        return ;
+    }
     $.inviteCodeList.push({'use':$.UserName,'code':homePageInfo.sharekey,'max':false,'activeid':activeid});
     if(JSON.stringify(visitBackInfo) !== '{}'){
         if(visitBackInfo.iscandraw === 1){
             console.log(`\n收取每日白菜`);
-            await $.wait(1000);
+            await $.wait(3000);
             let getVisitBackCabbageInfo = await takeRequest(`jxmc`,`operservice/GetVisitBackCabbage`,``,undefined,true);
             console.log(`收取白菜成功，获得${getVisitBackCabbageInfo.drawnum}`);
         }else{
@@ -174,7 +181,7 @@ async function main() {
             let signFlag = true;
             for (let j = 0; j < signList.length; j++) {
                 if(signList[j].fortoday && !signList[j].hasdone){
-                    await $.wait(1000);
+                    await $.wait(3000);
                     console.log(`\n去签到`);
                     await takeRequest(`jxmc`,`operservice/GetSignReward`,`&currdate=${signInfo.currdate}`,`activeid%2Cactivekey%2Cchannel%2Ccurrdate%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp`,true);
                     console.log(`签到成功`);
@@ -200,12 +207,12 @@ async function main() {
         console.log('\n收奶牛金币');
         let cowInfo = await takeRequest(`jxmc`,`operservice/GetCoin`,`&token=${cowToken}`,`activeid%2Cactivekey%2Cchannel%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp%2Ctoken`,true);
         console.log(`获得金币：${cowInfo.addcoin || 0}`);
-        await $.wait(1000);
+        await $.wait(3000);
     }
     if(JSON.stringify(cardInfo) !== '{}'){
         console.log(`\n可以扭蛋次数：${cardInfo.times}`);
         for (let j = 0; j < cardInfo.times; j++) {
-            await $.wait(2000);
+            await $.wait(3000);
             console.log(`执行一次扭蛋`);
             let drawCardInfo = await takeRequest(`jxmc`,`operservice/DrawCard`,``,undefined,true);
             if(drawCardInfo.prizetype === 3){
@@ -228,11 +235,11 @@ async function main() {
         await doTask();
         runTime++;
     }while ($.freshFlag  && runTime <5)
-    await $.wait(2000);
+    await $.wait(3000);
     await doMotion(petidList);
     await buyCabbage(homePageInfo);
     await feed();
-    await doUserLoveInfo();
+    //await doUserLoveInfo();
 }
 
 async function doUserLoveInfo() {
@@ -249,7 +256,7 @@ async function doUserLoveInfo() {
             console.log(`完成任务：${oneTask.taskName}`);
             awardInfo = await takeRequest(`newtasksys`, `newtasksys_front/Award`, `source=jxmc_zanaixin&taskId=${oneTask.taskId}&bizCode=jxmc_zanaixin`, `bizCode%2Csource%2CtaskId`, true);
             console.log(`领取爱心成功，获得${JSON.parse(awardInfo.prizeInfo).prizeInfo}`);
-            await $.wait(2000);
+            await $.wait(3000);
             $.freshFlag = true;
         }
         if(oneTask.taskId === 2147 || oneTask.taskId === 2157 || oneTask.taskId === 2167 || oneTask.taskId === 2171){
@@ -379,14 +386,14 @@ async function feed(){
                 await $.wait(4000);
                 if (pause) {
                     homePageInfo = await takeRequest(`jxmc`,`queryservice/GetHomePageInfo`,`&isgift=1&isquerypicksite=1&isqueryinviteicon=1`,`activeid%2Cactivekey%2Cchannel%2Cisgift%2Cisqueryinviteicon%2Cisquerypicksite%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp`,true);
-                    await $.wait(1000);
+                    await $.wait(3000);
                     for (let n = 0; n < homePageInfo.petinfo.length; n++) {
                         let onepetInfo = homePageInfo.petinfo[n];
                         if (onepetInfo.cangetborn === 1) {
                             console.log(`开始收鸡蛋`);
                             let getEggInfo = await takeRequest(`jxmc`,`operservice/GetSelfResult`,`&type=11&itemid=${onepetInfo.petid}`,`activeid%2Cactivekey%2Cchannel%2Citemid%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp%2Ctype`,true);
                             console.log(`成功收取${getEggInfo.addnum || null}个蛋,现有鸡蛋${getEggInfo.newnum || null}个`);
-                            await $.wait(1000);
+                            await $.wait(3000);
                         }
                     }
                 }
@@ -411,9 +418,9 @@ async function buyCabbage(homePageInfo){
                 console.log(`第${j + 1}次购买白菜`);
                 let buyInfo = await takeRequest(`jxmc`,`operservice/Buy`,`&type=1`,`activeid%2Cactivekey%2Cchannel%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp%2Ctype`,true);
                 console.log(`购买成功，当前有白菜：${buyInfo.newnum}颗`);
-                await $.wait(2000);
+                await $.wait(3000);
             }
-            await $.wait(2000);
+            await $.wait(3000);
         }else{
             console.log(`现有白菜${materialNumber},大于400颗,不进行购买`);
         }
@@ -428,7 +435,7 @@ async function doMotion(petidList){
         console.log(`开始第${i + 1}次割草`);
         let mowingInfo = await takeRequest(`jxmc`,`operservice/Action`,`&type=2`,'activeid%2Cactivekey%2Cchannel%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp%2Ctype',true);
         console.log(`获得金币：${mowingInfo.addcoins || 0}`);
-        await $.wait(2000);
+        await $.wait(3000);
         if(Number(mowingInfo.addcoins) >0 ){
             runFlag = true;
         }else{
@@ -458,7 +465,7 @@ async function doMotion(petidList){
             runFlag = false;
             console.log(`未获得金币暂停割鸡腿`);
         }
-        await $.wait(2000);
+        await $.wait(3000);
     }
 }
 async function doTask(){
@@ -473,7 +480,7 @@ async function doTask(){
                 console.log(`完成任务：${oneTask.taskName}`);
                 awardInfo = await takeRequest(`newtasksys`,`newtasksys_front/Award`,`source=jxmc&taskId=${oneTask.taskId}&bizCode=jxmc`,`bizCode%2Csource%2CtaskId`,true);
                 console.log(`领取金币成功，获得${JSON.parse(awardInfo.prizeInfo).prizeInfo}`);
-                await $.wait(2000);
+                await $.wait(3000);
                 $.freshFlag = true;
             }
         } else {//每日任务
@@ -484,7 +491,7 @@ async function doTask(){
                     console.log(`完成任务：${oneTask.taskName}`);
                     awardInfo = await takeRequest(`newtasksys`,`newtasksys_front/Award`,`source=jxmc&taskId=${oneTask.taskId}&bizCode=jxmc`,`bizCode%2Csource%2CtaskId`,true);
                     console.log(`领取金币成功，获得${JSON.parse(awardInfo.prizeInfo).prizeInfo}`);
-                    await $.wait(2000);
+                    await $.wait(3000);
                     $.freshFlag = true;
                 }else {
                     console.log(`任务：${oneTask.taskName},未完成`);
@@ -494,7 +501,7 @@ async function doTask(){
                     console.log(`完成任务：${oneTask.taskName}`);
                     awardInfo = await takeRequest(`newtasksys`,`newtasksys_front/Award`,`source=jxmc&taskId=${oneTask.taskId}&bizCode=jxmc`,`bizCode%2Csource%2CtaskId`,true);
                     console.log(`领取金币成功，获得${JSON.parse(awardInfo.prizeInfo).prizeInfo}`);
-                    await $.wait(2000);
+                    await $.wait(3000);
                     $.freshFlag = true;
                 }
                 for (let j = Number(oneTask.completedTimes); j < Number(oneTask.configTargetTimes); j++) {
@@ -511,7 +518,7 @@ async function doTask(){
                 awardInfo = await takeRequest(`newtasksys`,`newtasksys_front/Award`,`source=jxmc&taskId=${oneTask.taskId}&bizCode=jxmc`,`bizCode%2Csource%2CtaskId`,true);
                 console.log(`领取金币成功，获得${JSON.parse(awardInfo.prizeInfo).prizeInfo}`);
                 $.freshFlag = true;
-                await $.wait(2000);
+                await $.wait(3000);
             }
         }
     }
