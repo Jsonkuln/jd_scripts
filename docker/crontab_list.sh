@@ -116,6 +116,10 @@
 20 0,20 * * * node /scripts/jd_lottery_drew.js >> /scripts/logs/jd_lottery_drew.log 2>&1
 #冰雪闪耀季
 30 0,2 7-24 12 * node /scripts/jd_bxsyj.js >> /scripts/logs/jd_bxsyj.log 2>&1
+#戏剧大赛
+5 5 10-31 12 * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
+#京东工业品
+10 8,20 * 12 * node /scripts/jd_gyp.js >> /scripts/logs/jd_gyp.log 2>&1
 
 ##############长期活动##############
 # 签到
