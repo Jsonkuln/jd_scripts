@@ -46,8 +46,6 @@
 1 6-22/6 * * * node /scripts/jd_fcdyj.js >> /scripts/logs/jd_fcdyj.log 2>&1
 #发财大赢家
 20 8-20/2 * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
-#京喜领88元红包
-30 1,6,21 * * * node /scripts/jx_lhb.js >> /scripts/logs/jx_lhb.log 2>&1
 #特务Z
 23 8,13 * * * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.log 2>&1
 #店铺签到
@@ -112,8 +110,6 @@
 20 0,20 * * * node /scripts/jd_lottery_drew.js >> /scripts/logs/jd_lottery_drew.log 2>&1
 #冰雪闪耀季
 30 0,2 7-24 12 * node /scripts/jd_bxsyj.js >> /scripts/logs/jd_bxsyj.log 2>&1
-#戏剧大赛
-5 5 10-31 12 * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 #京东工业品
 10 8,20 * 12 * node /scripts/jd_gyp.js >> /scripts/logs/jd_gyp.log 2>&1
 #整点京豆雨
