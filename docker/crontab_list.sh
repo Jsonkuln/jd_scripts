@@ -116,6 +116,10 @@
 5 5 10-31 12 * node /scripts/jd_vivo.js >> /scripts/logs/jd_vivo.log 2>&1
 #京东工业品
 10 8,20 * 12 * node /scripts/jd_gyp.js >> /scripts/logs/jd_gyp.log 2>&1
+#整点京豆雨
+0 * * * * node /scripts/jd_live_redrain.js.js >> /scripts/logs/jd_live_redrain.js.log 2>&1
+#半点京豆雨
+30 20-23/1 * * * node /scripts/jd_live_redrain_half.js.js >> /scripts/logs/jd_live_redrain_half.js.log 2>&1
 
 ##############长期活动##############
 # 签到
