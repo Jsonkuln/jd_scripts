@@ -85,8 +85,7 @@ if ($.isNode()) {
     }
   }
   let res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/yongyuanlin/cast@main/mast/cfd.json')
-  $.strMyShareIds = [...(res || [])]
-  await shareCodesFormat()
+  $.strMyShareIds = [...(res && res.shareId || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
@@ -205,8 +204,8 @@ async function composePearlState(type) {
                     data.PearlList.shift()
                     let beaconType = beacon.type
                     if (v % div === 0){
-                    await realTmReport(data.strMyShareId)
-                    await $.wait(5000)
+                      await realTmReport(data.strMyShareId)
+                      await $.wait(5000)
                     }
                     if (beacon.rbf) {
                       let size = 1
@@ -600,12 +599,10 @@ function taskUrl(function_path, body = '', dwEnv = 7) {
     }
   };
 }
-
 function getStk(url) {
   let arr = url.split('&').map(x => x.replace(/.*\?/, "").replace(/=.*/, ""))
   return encodeURIComponent(arr.filter(x => x).sort().join(','))
 }
-
 function randomString(e) {
   e = e || 32;
   let t = "0123456789abcdef", a = t.length, n = "";
@@ -634,45 +631,6 @@ function showMsg() {
     }
     resolve();
   });
-}
-
-function readShareCode() {
-  return new Promise(async resolve => {
-    $.get({url: ``, timeout: 10000}, (err, resp, data) => {
-      try {
-        if (err) {
-          //console.log(JSON.stringify(err))
-          //console.log(`${$.name} readShareCode API请求失败，请检查网路重试`)
-        } else {
-          if (data) {
-            console.log(`\n随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
-            data = JSON.parse(data);
-          }
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve(data);
-      }
-    })
-    await $.wait(10000);
-    resolve()
-  })
-}
-//格式化助力码
-function shareCodesFormat() {
-  return new Promise(async resolve => {
-    $.newShareCodes = []
-    // const readShareCodeRes = await readShareCode();
-    // if (readShareCodeRes && readShareCodeRes.code === 200) {
-    //   $.newShareCodes = [...new Set([...$.shareCodes, ...$.strMyShareIds, ...(readShareCodeRes.data || [])])];
-    // } else {
-    //   $.newShareCodes = [...new Set([...$.shareCodes, ...$.strMyShareIds])];
-    // }
-    $.newShareCodes = [...new Set([...$.shareCodes, ...$.strMyShareIds])];
-    console.log(`您将要助力的好友${JSON.stringify($.newShareCodes)}`)
-    resolve();
-  })
 }
 
 function TotalBean() {
@@ -779,7 +737,7 @@ async function requestAlgo() {
       "expandParams": ""
     })
   }
-  new Promise(async resolve => {
+  return new Promise(async resolve => {
     $.post(options, (err, resp, data) => {
       try {
         if (err) {
