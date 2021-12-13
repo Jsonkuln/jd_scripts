@@ -30,8 +30,6 @@
 0 10 * * * node /scripts/jd_yqyl.js >> /scripts/logs/jd_yqyl.log 2>&1
 #入口为极速版 百元生活费 赚金币 邀请好友
 25 8 * * * node /scripts/jd_jszjb.js >> /scripts/logs/jd_jszjb.log 2>&1
-#整点京豆雨
-0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #京东直播
 50 12-14 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
 #天天优惠大乐透
@@ -106,8 +104,6 @@
 15 15 * * * node /scripts/jd_dnpj.js >> /scripts/logs/jd_dnpj.log 2>&1
 #京东生鲜每日抽奖
 15 0 * * * node /scripts/jd_sxLottery.js >> /scripts/logs/jd_sxLottery.log 2>&1
-#金榜年终奖
-10 0,12 * * * node /scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
 #京东我的理想家
 40 7 * * *  node /scripts/jd_lxLottery.js >> /scripts/logs/jd_lxLottery.log 2>&1
 #暖暖红包
