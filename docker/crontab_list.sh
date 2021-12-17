@@ -56,8 +56,6 @@
 1 1 * * * node /scripts/jd_ppdz.js >> /scripts/logs/jd_ppdz.log 2>&1
 #内容鉴赏官
 15 3,6 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
-#京喜财富岛合成月饼
-10 * * * * node /scripts/jx_cfd_mooncake.js >> /scripts/logs/jx_cfd_mooncake.log 2>&1
 # 送豆得豆
 45 0,12 * * * node /scripts/jd_senbeans.js >> /scripts/logs/jd_senbeans.log 2>&1
 # 希捷品牌日瓜分百万京豆
@@ -182,6 +180,10 @@
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
 # 京喜财富岛
 30 * * * * node /scripts/jx_cfd_loop.js >> /scripts/logs/jx_cfd_loop.log 2>&1
+#京喜财富岛合成月饼
+10 * * * * node /scripts/jx_cfd_mooncake.js >> /scripts/logs/jx_cfd_mooncake.log 2>&1
+#财富岛珍珠兑换
+59 0-23/1 * * * node /scripts/jx_cfd_pearl_ex.js >> /scripts/logs/jx_cfd_pearl_ex.log 2>&1
 # 京东极速版任务
 20 0-23/6 * * * node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
 # 京东抽奖机
@@ -256,6 +258,8 @@
 33 7,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 #京粉
 30 0,6-23 * * * node /scripts/jd_jingfen.js >> /scripts/logs/jd_jingfen.log 2>&1
+#京东评价
+37 20 * * * node /scripts/jd_evaluation.js >> /scripts/logs/jd_evaluation.log 2>&1
 
 ##############默认注释活动##############
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
