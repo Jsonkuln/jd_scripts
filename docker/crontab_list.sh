@@ -120,6 +120,8 @@
 10 8,20 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 # 京东京车会签到
 10 15 * * * node /scripts/jd_jchsign.js >> /scripts/logs/jd_jchsign.log 2>&1
+# 写情书抽京豆
+30 7,20 12-25 12 * node /scripts/jd_xqscjd.js >> /scripts/logs/jd_xqscjd.log 2>&1
 
 ##############长期活动##############
 # 签到
