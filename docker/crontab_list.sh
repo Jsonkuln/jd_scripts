@@ -98,8 +98,6 @@
 13 13 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
 #电脑配件
 15 15 * * * node /scripts/jd_dnpj.js >> /scripts/logs/jd_dnpj.log 2>&1
-#京东生鲜每日抽奖
-15 0 * * * node /scripts/jd_sxLottery.js >> /scripts/logs/jd_sxLottery.log 2>&1
 #京东我的理想家
 40 7 * * *  node /scripts/jd_lxLottery.js >> /scripts/logs/jd_lxLottery.log 2>&1
 #京东赚京豆一分钱抽奖
