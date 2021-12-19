@@ -84,8 +84,6 @@
 45 6-23/2 * * * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log 2>&1
 #电器盲盒
 0 8,17 1-20 * * node /scripts/jd_dqmh.js >> /scripts/logs/jd_dqmh.log 2>&1
-#任务脚本
-30 8,13,21 * * * node /scripts/jd_open.js >> /scripts/logs/jd_open.log 2>&1
 #赚京豆
 10 7,12,22 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
 #京东饭粒
@@ -118,8 +116,6 @@
 10 8,20 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 # 京东京车会签到
 10 15 * * * node /scripts/jd_jchsign.js >> /scripts/logs/jd_jchsign.log 2>&1
-# 写情书抽京豆
-30 7,20 12-25 12 * node /scripts/jd_xqscjd.js >> /scripts/logs/jd_xqscjd.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -180,8 +176,6 @@
 10 7 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
-# 京喜财富岛
-30 * * * * node /scripts/jx_cfd_loop.js >> /scripts/logs/jx_cfd_loop.log 2>&1
 #京喜财富岛合成月饼
 10 * * * * node /scripts/jx_cfd_mooncake.js >> /scripts/logs/jx_cfd_mooncake.log 2>&1
 #财富岛珍珠兑换
