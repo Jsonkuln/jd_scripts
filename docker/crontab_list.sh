@@ -108,8 +108,6 @@
 30 20-23/1 * * * node /scripts/jd_live_redrain_half.js.js >> /scripts/logs/jd_live_redrain_half.js.log 2>&1
 #见缝插针
 40 16 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
-#逛京东会场
-0 0,20 * * * node /scripts/jd_mall_active.js >> /scripts/logs/jd_mall_active.log 2>&1
 # 京喜签到-喜豆
 10 8,20 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 # 京东京车会签到
