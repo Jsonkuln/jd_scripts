@@ -88,8 +88,6 @@
 30 8,21 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 #邀请有礼
 5 14 * * * node /scripts/jd_yqyl.js >> /scripts/logs/jd_yqyl.log 2>&1
-#答题
-9 10 * * * node /scripts/jd_dt.js >> /scripts/logs/jd_dt.log 2>&1
 #京东金榜
 13 13 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
 #电脑配件
