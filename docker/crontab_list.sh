@@ -88,8 +88,6 @@
 30 8,21 * * * node /scripts/jd_fanli.js >> /scripts/logs/jd_fanli.log 2>&1
 #邀请有礼
 5 14 * * * node /scripts/jd_yqyl.js >> /scripts/logs/jd_yqyl.log 2>&1
-#答题
-9 10 * * * node /scripts/jd_dt.js >> /scripts/logs/jd_dt.log 2>&1
 #京东金榜
 13 13 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
 #电脑配件
@@ -108,12 +106,8 @@
 30 20-23/1 * * * node /scripts/jd_live_redrain_half.js.js >> /scripts/logs/jd_live_redrain_half.js.log 2>&1
 #见缝插针
 40 16 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
-#逛京东会场
-0 0,20 * * * node /scripts/jd_mall_active.js >> /scripts/logs/jd_mall_active.log 2>&1
 # 京喜签到-喜豆
 10 8,20 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
-# 京东京车会签到
-10 15 * * * node /scripts/jd_jchsign.js >> /scripts/logs/jd_jchsign.log 2>&1
 # 战队投注
 10 11,22 * * * node /scripts/jd_zd.js >> /scripts/logs/jd_zd.log 2>&1
 
