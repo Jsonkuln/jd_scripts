@@ -1,6 +1,8 @@
 /*
 战队投注
-10 11,22 * * * jd_zd.js
+ [task_local]
+#战队投注
+10 11,22 * * * jd_zd.js, tag=战队投注, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 */
 const $ = new Env('战队投注');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -72,7 +74,7 @@ function tythelp() {
         data = JSON.parse(data);
         // console.log(data)
         if (data.code == 0) {
-          console.log(`获得:${data.data.prizeValue}豆`)
+          console.log(`返回:${JSON.stringify(data)}`)
         } else {
           console.log(data.errMsg)
         }
