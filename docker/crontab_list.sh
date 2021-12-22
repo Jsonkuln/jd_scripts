@@ -94,8 +94,6 @@
 15 15 * * * node /scripts/jd_dnpj.js >> /scripts/logs/jd_dnpj.log 2>&1
 #京东我的理想家
 40 7 * * *  node /scripts/jd_lxLottery.js >> /scripts/logs/jd_lxLottery.log 2>&1
-#京东赚京豆一分钱抽奖
-20 0,20 * * * node /scripts/jd_lottery_drew.js >> /scripts/logs/jd_lottery_drew.log 2>&1
 #冰雪闪耀季
 30 0,2 7-24 12 * node /scripts/jd_bxsyj.js >> /scripts/logs/jd_bxsyj.log 2>&1
 #京东工业品
