@@ -106,6 +106,8 @@
 10 8,20 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 # 战队投注
 10 11,22 * * * node /scripts/jd_zd.js >> /scripts/logs/jd_zd.log 2>&1
+# 12.27~1.1 集魔方
+22 0,20 27-31,1 12,1 * node /scripts/jd_desire.js >> /scripts/logs/jd_desire.log 2>&1
 
 ##############长期活动##############
 # 签到
