@@ -21,7 +21,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-let jd_redrain_half_url =  'https://gitee.com/msewb/update/raw/master/m_redrain_half.json';
+let jd_redrain_half_url =  'https://gitee.com/yongyuan1/scr/raw/master/jd_live_redrain_half.json';
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
