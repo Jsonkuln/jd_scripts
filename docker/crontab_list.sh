@@ -62,6 +62,8 @@
 17 10 * 9,10 * node /scripts/jd_SeagateBrand.js >> /scripts/logs/jd_SeagateBrand.log 2>&1
 #集魔方
 16 10,20 * * * node /scripts/jd_mofang.js >> /scripts/logs/jd_mofang.log 2>&1
+#京东小魔方--收集兑换
+31 8 * * * node /scripts/jd_mofang_exchange.js >> /scripts/logs/jd_mofang_exchange.log 2>&1
 #芥么签到
 11 7,15 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 #芥么赚豪礼
