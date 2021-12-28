@@ -171,7 +171,7 @@
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
 #京喜财富岛合成月饼
-10 * * * * node /scripts/jx_cfd_mooncake.js >> /scripts/logs/jx_cfd_mooncake.log 2>&1
+40 */3 * * * node /scripts/jx_cfd_pearl.js >> /scripts/logs/jx_cfd_pearl.log 2>&1
 #财富岛珍珠兑换
 59 0-23/1 * * * node /scripts/jx_cfd_pearl_ex.js >> /scripts/logs/jx_cfd_pearl_ex.log 2>&1
 # 京东极速版任务
@@ -192,18 +192,6 @@
 10 10 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 # 京喜牧场
 20 0-23/3 * * * node /scripts/jx_mc.js >> /scripts/logs/jx_mc.log 2>&1
-# 宠汪汪
-15 */2 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
-# 宠汪汪积分兑换京豆
-#0 0-16/8 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
-# 宠汪汪积分兑换就有版
-0 0,8,16 * * * node /scripts/jd_joy_reward_Mod.js >> /scripts/logs/jd_joy_reward_Mod.log 2>&1
-# 宠汪汪喂食
-35 */1 * * * node /scripts/jd_joy_feedPets.js >> /scripts/logs/jd_joy_feedPets.log 2>&1
-# 宠汪汪赛跑助力
-10 10-20/2 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
-# 宠汪汪偷好友积分与狗粮
-13 0-21/3 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1 
 #汪汪乐园开工位
 20 9 */7 * * node /scripts/jd_joypark_open.js >> /scripts/jd_joypark_open.log 2>&1
 #汪汪乐园提现
