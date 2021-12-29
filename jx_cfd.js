@@ -150,7 +150,7 @@ async function run() {
         // 导游
         //await Guide()
         // 撸珍珠
-        await Pearl()
+        // await Pearl()
         // 牛牛任务
         await ActTask()
         // 日常任务、成就任务
@@ -414,7 +414,7 @@ async function buildList(){
                     if(item.dwLvl == 0){
                         await taskGet(`user/createbuilding`, stk, additional)
                     }else{
-                        if(GetBuildInfo && GetBuildInfo.ddwNextLvlCostCoin * 3.5 < parseInt($.HomeInfo.ddwCoinBalance,10)){
+                        if(GetBuildInfo && GetBuildInfo.ddwNextLvlCostCoin * 2 < parseInt($.HomeInfo.ddwCoinBalance,10)){
                             additional = `&strBuildIndex=${GetBuildInfo.strBuildIndex}&ddwCostCoin=${GetBuildInfo.ddwNextLvlCostCoin}`
                             stk = `_cfd_t,bizCode,ddwCostCoin,dwEnv,ptag,source,strBuildIndex,strZone`
                             let update = await taskGet(`user/BuildLvlUp`, stk, additional)
