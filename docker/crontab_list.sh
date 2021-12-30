@@ -88,6 +88,8 @@
 22 0,20 27-31,1 12,1 * node /scripts/jd_desire.js >> /scripts/logs/jd_desire.log 2>&1
 #超级无线店铺签到
 31 1 * * * node /scripts/jd_sevenDay.js >> /scripts/logs/jd_sevenDay.log 2>&1
+#京东通天塔--签到
+31 8 * * * node /scripts/jd_m_sign.js >> /scripts/logs/jd_m_sign.log 2>&1
 
 ##############长期活动##############
 # 签到
