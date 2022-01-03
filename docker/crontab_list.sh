@@ -207,7 +207,7 @@
 # 京东试用（默认注释，请配合取关脚本使用）
 30 6 * * *  node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 #清空购物车
-10 7 * * * node /scripts/jd_cart_remove.js >> /scripts/logs/jd_cart_remove.log 2>&1
+0 23 * * * node /scripts/jd_cleancart.js >> /scripts/logs/jd_cleancart.log 2>&1
 #京喜购物返红包助力
 59 17,22 * * * node /scripts/jx_cashback.js >> /scripts/logs/jx_cashback.log 2>&1
 #东东世界
