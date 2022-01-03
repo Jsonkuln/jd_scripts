@@ -37,8 +37,8 @@ if ($.isNode()) {
     return;
   }
   console.log('女装盲盒\n' +
-      '活动时间：2021-12-1至2021-12-31\n' +
-      '活动地址：https://anmp.jd.com/babelDiy/Zeus/2x36jyruNVDWxUiAiGAgHRrkqVX2/index.html');
+      '活动时间：2022-1-1至2022-1-31\n' +
+      '活动地址：https://anmp.jd.com/babelDiy/Zeus/293owQqRtKfS8cuUhk4YzGFYGw2W/index.html');
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -58,19 +58,19 @@ if ($.isNode()) {
         continue
       }
       try {
-        await jdMh('https://anmp.jd.com/babelDiy/Zeus/2x36jyruNVDWxUiAiGAgHRrkqVX2/index.html')
+        await jdMh('https://anmp.jd.com/babelDiy/Zeus/293owQqRtKfS8cuUhk4YzGFYGw2W/index.html')
       } catch (e) {
         $.logErr(e)
       }
     }
   }
 })()
-  .catch((e) => {
-    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-  })
-  .finally(() => {
-    $.done();
-  })
+    .catch((e) => {
+      $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+    })
+    .finally(() => {
+      $.done();
+    })
 
 async function jdMh(url) {
   try {
@@ -208,7 +208,7 @@ function taskUrl(function_id, body = '') {
       'Content-Type': 'application/json;charset=utf-8',
       'Origin': 'wq.jd.com',
       'User-Agent': 'JD4iPhone/167490 (iPhone; iOS 14.2; Scale/3.00)',
-      'Referer': `https://anmp.jd.com/babelDiy/Zeus/xKACpgVjVJM7zPKbd5AGCij5yV9/index.html?wxAppName=jd`,
+      'Referer': `https://anmp.jd.com/babelDiy/Zeus/2x36jyruNVDWxUiAiGAgHRrkqVX2/index.html?wxAppName=jd`,
       'Cookie': cookie
     }
   }
