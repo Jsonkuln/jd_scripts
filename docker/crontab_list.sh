@@ -92,6 +92,8 @@
 35 21 * * * node /scripts/jd_wxCollectionActivity.js >> /scripts/logs/jd_wxCollectionActivity.log 2>&1
 #运动户外盲盒活动
 31 14 * * *  node /scripts/jd_hwmh.js >> /scripts/logs/jd_hwmh.log 2>&1
+#年货节签到
+0 13 * * *  node /scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
 
 ##############长期活动##############
 # 签到
