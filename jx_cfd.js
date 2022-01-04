@@ -83,8 +83,8 @@ if ($.isNode()) {
     }
   }
   let res = await getAuthorShareCode('')
-
   $.strMyShareIds = [...(res && res.shareId || [])]
+  await shareCodesFormat()
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
@@ -960,8 +960,8 @@ async function getBuildInfo(body, buildList, type = true) {
             await getUserInfo(false)
             console.log(`升级建筑`)
             console.log(`【${buildNmae}】当前等级：${buildList.dwLvl}`)
-            console.log(`【${buildNmae}】升级需要${data.ddwNextLvlCostCoin}金币，保留升级需要的3倍${data.ddwNextLvlCostCoin * 3}金币，当前拥有${$.info.ddwCoinBalance}金币`)
-            if(data.dwCanLvlUp > 0 && $.info.ddwCoinBalance >= (data.ddwNextLvlCostCoin * 3)) {
+            console.log(`【${buildNmae}】升级需要${data.ddwNextLvlCostCoin}金币，保留升级需要的2倍${data.ddwNextLvlCostCoin * 2}金币，当前拥有${$.info.ddwCoinBalance}金币`)
+            if(data.dwCanLvlUp > 0 && $.info.ddwCoinBalance >= (data.ddwNextLvlCostCoin * 2)) {
               console.log(`【${buildNmae}】满足升级条件，开始升级`)
               const body = `ddwCostCoin=${data.ddwNextLvlCostCoin}&strBuildIndex=${data.strBuildIndex}`
               await $.wait(2000)
@@ -1144,7 +1144,7 @@ function getUserInfo(showInvite = true) {
             console.log(`财富岛好友互助码每次运行都变化,旧的当天有效`);
             console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${strMyShareId}`);
             $.shareCodes.push(strMyShareId)
-           
+          
           }
           $.info = {
             ...$.info,
@@ -1564,6 +1564,20 @@ function readShareCode() {
   })
 }
 
+//格式化助力码
+function shareCodesFormat() {
+  return new Promise(async resolve => {
+    $.newShareCodes = []
+    const readShareCodeRes = await readShareCode();
+    if (readShareCodeRes && readShareCodeRes.code === 200) {
+      $.newShareCodes = [...new Set([...$.shareCodes, ...$.strMyShareIds, ...(readShareCodeRes.data || [])])];
+    } else {
+      $.newShareCodes = [...new Set([...$.shareCodes, ...$.strMyShareIds])];
+    }
+    console.log(`您将要助力的好友${JSON.stringify($.newShareCodes)}`)
+    resolve();
+  })
+}
 
 function TotalBean() {
   return new Promise(resolve => {
