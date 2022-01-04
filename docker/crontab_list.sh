@@ -92,6 +92,8 @@
 3 11,23 * * * node /scripts/jd_m_sig.js >> /scripts/logs/jd_m_sig.log 2>&1
 #加购物车抽奖
 35 21 * * * node /scripts/jd_wxCollectionActivity.js >> /scripts/logs/jd_wxCollectionActivity.log 2>&1
+#运动户外盲盒活动
+31 14 * * *  node /scripts/jd_hwmh.js >> /scripts/logs/jd_hwmh.log 2>&1
 
 ##############长期活动##############
 # 签到
