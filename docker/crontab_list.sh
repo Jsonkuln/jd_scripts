@@ -32,8 +32,6 @@
 30 7 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
 #早起福利
 30 7 * * * node /scripts/jd_goodMorning.js >> /scripts/logs/jd_goodMorning.log 2>&1
-#许愿池
-0 8,12 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 #发财大赢家
 20 8-20/2 * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 #特务Z
@@ -92,6 +90,12 @@
 3 11,23 * * * node /scripts/jd_m_sig.js >> /scripts/logs/jd_m_sig.log 2>&1
 #加购物车抽奖
 35 21 * * * node /scripts/jd_wxCollectionActivity.js >> /scripts/logs/jd_wxCollectionActivity.log 2>&1
+#运动户外盲盒活动
+31 14 * * *  node /scripts/jd_hwmh.js >> /scripts/logs/jd_hwmh.log 2>&1
+#年货节签到
+0 13 * * *  node /scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
+#通用游戏任务
+28 17 * * *  node /scripts/jd_game.js >> /scripts/logs/jd_game.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -156,8 +160,6 @@
 59 0-23/1 * * * node /scripts/jx_cfd_pearl_ex.js >> /scripts/logs/jx_cfd_pearl_ex.log 2>&1
 # 京东极速版任务
 20 0-23/6 * * * node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
-# 京东抽奖机
-45 0,10 * * *  node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 京东摇京豆
 0 1,17 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 京东金融领白条券
@@ -216,8 +218,8 @@
 33 7,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 #京粉
 30 0,6-23 * * * node /scripts/jd_jingfen.js >> /scripts/logs/jd_jingfen.log 2>&1
-#京东评价
-37 20 * * * node /scripts/jd_evaluation.js >> /scripts/logs/jd_evaluation.log 2>&1
+#许愿池/抽奖机
+0 8,12 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 
 ##############默认注释活动##############
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
