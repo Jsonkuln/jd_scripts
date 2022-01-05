@@ -206,8 +206,6 @@
 0 23 * * * node /scripts/jd_cleancart.js >> /scripts/logs/jd_cleancart.log 2>&1
 #京喜购物返红包助力
 59 17,22 * * * node /scripts/jx_cashback.js >> /scripts/logs/jx_cashback.log 2>&1
-#东东世界
-20 8 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 #积分换话费
 33 7,19 * * * node /scripts/jd_dwapp.js >> /scripts/logs/jd_dwapp.log 2>&1
 #京粉
