@@ -1539,11 +1539,33 @@ function showMsg() {
   });
 }
 
+function readShareCode() {
+  return new Promise(async resolve => {
+    $.get({url: ``, timeout: 30 * 1000}, (err, resp, data) => {
+      try {
+        if (err) {
+        } else {
+          if (data) {
+            console.log(`\n随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+            data = JSON.parse(data);
+          }
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve(data);
+      }
+    })
+    await $.wait(30 * 1000);
+    resolve()
+  })
+}
 
 //格式化助力码
 function shareCodesFormat() {
   return new Promise(async resolve => {
     $.newShareCodes = []
+    const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.shareCodes, ...$.strMyShareIds, ...(readShareCodeRes.data || [])])];
     } else {
