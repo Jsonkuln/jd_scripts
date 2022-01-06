@@ -7,7 +7,7 @@ if (!["card","car"].includes(process.env.FS_LEVEL)) {
 export computer_activityId="17"  
 
 即时任务，无需cron
-15 45 * * * jd_computer.js
+45 15 * * * jd_computer.js
 */
 
 const $ = new Env('电脑配件');
