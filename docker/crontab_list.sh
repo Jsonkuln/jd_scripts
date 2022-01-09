@@ -172,6 +172,8 @@
 10 10 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 # 京喜牧场
 20 0-23/3 * * * node /scripts/jx_mc.js >> /scripts/logs/jx_mc.log 2>&1
+# 京喜牧场助力
+23 7,16 * * * node /scripts/jx_mc_hb.js >> /scripts/logs/jx_mc_hb.log 2>&1
 #汪汪乐园开工位
 20 9 */7 * * node /scripts/jd_joypark_open.js >> /scripts/jd_joypark_open.log 2>&1
 #汪汪乐园提现
