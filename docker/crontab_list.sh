@@ -96,6 +96,8 @@
 28 16 * * *  node /scripts/jd_computer.js >> /scripts/logs/jd_computer.log 2>&1
 #见缝插针
 15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
+#会场红包
+5 0,20,21,23 * * * node /scripts/jd_nhs_red.js >> /scripts/logs/jd_nhs_red.log 2>&1
 
 ##############长期活动##############
 # 签到
