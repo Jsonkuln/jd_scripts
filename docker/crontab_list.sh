@@ -96,6 +96,8 @@
 28 16 * * *  node /scripts/jd_computer.js >> /scripts/logs/jd_computer.log 2>&1
 #见缝插针
 15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
+#会场红包
+5 0,20,21,23 * * * node /scripts/jd_nh_red.js >> /scripts/logs/jd_nh_red.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -110,6 +112,8 @@
 0 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
 # 东东萌宠
 5 6-18/6 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log 2>&1
+# 东东萌宠内部互助
+30 9,22 * * * node /scripts/jd_pet_help.js >> /scripts/logs/jd_pet_help.log 2>&1
 # 京东种豆得豆
 0  */6 * * * node /scripts/jd_plantBean.js >> /scripts/logs/jd_plantBean.log 2>&1
 # 进店领豆
