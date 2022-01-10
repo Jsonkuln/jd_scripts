@@ -1,7 +1,7 @@
 /*
 年货节签到
 只有大吉才会推送
-cron 0 13 * * * jd_nh_sign.js
+cron 23 13 * * * jd_nh_sign.js
 * * */
 const $ = new Env('年货节签到');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -60,13 +60,24 @@ async function main() {
         }else if(oneInfo.timeStatus === 1){
             await $.wait(2000);
             console.log(`任务：${oneInfo.assignmentName},去完成`);
-            let info = `{
+            let ext = '';
+            if(oneInfo.assignmentName === '9日大奖'){
+                ext = {"exchangeNum":1};
+            }
+            if(oneInfo.assignmentName === '17日大奖'){
+                ext = {"exchangeNum":2};
+            }
+            if(oneInfo.assignmentName === '24日大奖'){
+                ext = {"exchangeNum":3};
+            }
+            let info = {
                 "encryptProjectId":"MD6S5z8gGgtP2VLJkLqmWPuDtHe",
-                "encryptAssignmentId":"${oneInfo.encryptAssignmentId}",
+                "encryptAssignmentId":oneInfo.encryptAssignmentId,
                 "sourceCode":"aceaceglqd20211215",
-                "completionFlag":true
-            }`;
-            let signInfo = await takeRequest('doInteractiveAssignment',info);
+                "completionFlag":true,
+                "ext":ext
+            };
+            let signInfo = await takeRequest('doInteractiveAssignment',JSON.stringify(info));
             if(signInfo && signInfo.rewardsInfo && signInfo.rewardsInfo.successRewards){
                 let allSignInfo = signInfo.rewardsInfo.successRewards;
                 for(let type in allSignInfo){
