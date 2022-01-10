@@ -1,3 +1,4 @@
+/*
 京喜财富岛
 更新时间：2021-9-11
 活动入口：京喜APP-我的-京喜财富岛
@@ -92,7 +93,6 @@ if ($.isNode()) {
       await $.wait(3000);
     }
   }
-
   await showMsg();
 })()
     .catch((e) => $.logErr(e))

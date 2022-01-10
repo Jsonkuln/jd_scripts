@@ -1,6 +1,6 @@
 /*
 京喜财富岛
-cron 40 */3 * * * jx_cfd_pearl.js
+cron 40 0-23/3 * * * jx_cfd_mooncake.js
 更新时间：2021-9-11
 活动入口：京喜APP-我的-京喜财富岛
 
@@ -9,17 +9,17 @@ cron 40 */3 * * * jx_cfd_pearl.js
 ============Quantumultx===============
 [task_local]
 #京喜财富岛
-40 */3 * * * https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jx_cfd_pearl.js, tag=京喜财富岛, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxcfd.png, enabled=true
+40 0-23/3 * * * https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jx_cfd_mooncake.js, tag=京喜财富岛, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxcfd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "40 */3 * * *" script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jx_cfd_mooncake.js,tag=京喜财富岛
+cron "40 0-23/3 * * *" script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jx_cfd_mooncake.js,tag=京喜财富岛
 
 ===============Surge=================
-京喜财富岛 = type=cron,cronexp="40 */3 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jx_cfd_pearl.js
+京喜财富岛 = type=cron,cronexp="40 0-23/3 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jx_cfd_mooncake.js
 
 ============小火箭=========
-京喜财富岛 = type=cron,script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jx_cfd_pearl.js, cronexpr="40 */3 * * *", timeout=3600, enable=true
+京喜财富岛 = type=cron,script-path=https://raw.githubusercontent.com/yongyuanlin/jd_scripts/master/jx_cfd_mooncake.js, cronexpr="40 0-23/3 * * *", timeout=3600, enable=true
  */
 const $ = new Env('京喜财富岛合成珍珠');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';

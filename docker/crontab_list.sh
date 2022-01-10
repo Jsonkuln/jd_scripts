@@ -86,8 +86,6 @@
 3 11,23 * * * node /scripts/jd_m_sig.js >> /scripts/logs/jd_m_sig.log 2>&1
 #加购物车抽奖
 35 21 * * * node /scripts/jd_wxCollectionActivity.js >> /scripts/logs/jd_wxCollectionActivity.log 2>&1
-#运动户外盲盒活动
-31 14 * * *  node /scripts/jd_hwmh.js >> /scripts/logs/jd_hwmh.log 2>&1
 #年货节签到
 0 13 * * *  node /scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
 #通用游戏任务
@@ -98,7 +96,12 @@
 15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 #会场红包
 5 0,20,21,23 * * * node /scripts/jd_nh_red.js >> /scripts/logs/jd_nh_red.log 2>&1
-
+#头文子J
+5 7 * * * node /scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
+#头文字J 游戏
+10 6,10,12 * * * node /scripts/jd_mpdzcar_game.js >> /scripts/logs/jd_mpdzcar_game.log 2>&1
+#头文字J 助力
+10 6 * * * node /scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -159,7 +162,7 @@
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
 #京喜财富岛合成月饼
-40 */3 * * * node /scripts/jx_cfd_pearl.js >> /scripts/logs/jx_cfd_pearl.log 2>&1
+40 0-23/3 * * * node /scripts/jx_cfd_mooncake.js >> /scripts/logs/jx_cfd_mooncake.log 2>&1
 #财富岛珍珠兑换
 59 0-23/1 * * * node /scripts/jx_cfd_pearl_ex.js >> /scripts/logs/jx_cfd_pearl_ex.log 2>&1
 # 京东极速版任务
