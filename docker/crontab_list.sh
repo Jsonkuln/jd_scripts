@@ -96,7 +96,10 @@
 15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 #会场红包
 5 0,20,21,23 * * * node /scripts/jd_nh_red.js >> /scripts/logs/jd_nh_red.log 2>&1
-
+#头文子J
+5 7 * * * node /scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
+#头文字J 游戏
+10 6,10,12 * * * node /scripts/jd_mpdzcar_game.js >> /scripts/logs/jd_mpdzcar_game.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
