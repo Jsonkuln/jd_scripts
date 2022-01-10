@@ -92,7 +92,6 @@ if ($.isNode()) {
       await $.wait(3000);
     }
   }
-
   await showMsg();
 })()
     .catch((e) => $.logErr(e))
