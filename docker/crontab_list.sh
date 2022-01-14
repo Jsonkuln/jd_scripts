@@ -103,7 +103,7 @@
 #头文字J 助力
 10 6 * * * node /scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
 #天天压岁钱
-50 10,18 * * * node /scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
+33 0,13,20 * * * node /scripts/jx_ttysq.js >> /scripts/logs/jx_ttysq.log 2>&1
 #白条抽奖
 10 8,20 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 ##############长期活动##############
