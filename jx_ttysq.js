@@ -1,6 +1,11 @@
 /*
 #天天压岁钱
-50 10,18 * * * jd_ttysq.js
+33 0,13,20 * * * jx_ttysq.js
+
+#############
+PS:(不是玩代码的人，写代码有bug很正常！！)
+
+
  */
 const $ = new Env('天天压岁钱');
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -49,24 +54,23 @@ const JD_API_HOST = `https://m.jingxi.com`;
         }
     }
     let res = await getAuthorShareCode('')
-
     if (res) {
         authorCode = res.sort(() => 0.5 - Math.random())
         if (authorCode.length > 3) {
             authorCode = authorCode.splice(0, 3)
         }
-        authorCode = authorCode.map(code => {
+        authorCode = authorCode.map(entity => {
             return {
                 "user": "author",
-                "code": code,
-                "redId": Math.floor(1 + Math.random() * 10),
+                "code": entity.code,
+                "redId": entity.rpids[Math.floor((Math.random() * entity.rpids.length))],
                 "beHelp": 0,
                 "helpId": $.taskId
             }
         })
         $.shareCoseList = [...$.shareCoseList, ...authorCode]
     }
-    console.log(`要助力的助力码${JSON.stringify($.shareCoseList.length)}个\n`)
+    console.log(`要助力的助理码${JSON.stringify($.shareCoseList.length)}个\n`)
     //助力任务
     for (let i = 0; i < cookiesArr.length; i++) {
         $.canHelp = true
