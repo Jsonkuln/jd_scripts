@@ -177,8 +177,6 @@
 0 1,17 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 京东金融领白条券
 0 8 * * * node /scripts/jd_baiTiao.js >> /scripts/logs/jd_baiTiao.log 2>&1
-# 天天提鹅
-30 8 * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
 # 东东农场->东东乐园(点大风车
 30 7 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
 # 领金贴
