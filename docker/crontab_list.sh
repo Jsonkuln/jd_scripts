@@ -108,6 +108,8 @@
 10 8,20 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 #通天塔签到共建
 33 11,21 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
+#萌虎摇摇乐
+1 0,12,18 * * * node /scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
@@ -215,8 +217,6 @@
 25 */1 * * * node /scripts/jd_jddj_getPoints.js >> /scripts/logs/jd_jddj_getPoints.log 2>&1
 #京东到家鲜豆庄园
 10 8 * * * node /scripts/jd_jddj_plantBeans.js >> /scripts/logs/jd_jddj_plantBeans.log 2>&1
-#京东价格保护
-10 0,12,22 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
 # 京东试用（默认注释，请配合取关脚本使用）
 30 6 * * *  node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 #清空购物车
