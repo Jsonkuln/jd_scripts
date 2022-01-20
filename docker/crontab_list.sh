@@ -30,8 +30,6 @@
 30 7 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
 #早起福利
 30 7 * * * node /scripts/jd_goodMorning.js >> /scripts/logs/jd_goodMorning.log 2>&1
-#发财大赢家
-20 8-20/2 * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 #特务Z
 23 8,13 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #店铺签到
@@ -52,8 +50,6 @@
 11 7,15 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 #芥么赚豪礼
 0 78,22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
-#东东世界兑换
-0 0 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
 #幸运扭蛋
 11 13 * * * node /scripts/jd_lucky_egg.js >> /scripts/logs/jd_lucky_egg.log 2>&1
 # 惊喜欢乐砍
@@ -168,8 +164,6 @@
 27 7,15 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
 # 闪购盲盒
 27 8 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
-# 京东秒秒币
-10 7 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
 #京喜财富岛合成月饼
