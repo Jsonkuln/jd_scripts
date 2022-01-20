@@ -111,7 +111,7 @@
 #萌虎摇摇乐
 1 0,12,18 * * * node /scripts/jd_mhyyl.js >> /scripts/logs/jd_mhyyl.log 2>&1
 #炸年兽
-1 0,6-18/2 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
+1 0-18/2,22 * * * node /scripts/jd_trave.js >> /scripts/logs/jd_trave.log 2>&1
 
 ##############长期活动##############
 # 签到

@@ -1,5 +1,5 @@
 /*
-1 0,6-18/2 * * * jd_travel.js
+1 0-18/2,22 * * * jd_trave.js
 */
 const $ = new Env('炸年兽');
 const notify = $.isNode() ? require('./sendNotify') : '';
