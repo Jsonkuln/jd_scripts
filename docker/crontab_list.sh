@@ -106,6 +106,8 @@
 33 11,21 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
 #萌虎摇摇乐
 1 0,12,18 * * * node /scripts/jd_mhyyl.js >> /scripts/logs/jd_mhyyl.log 2>&1
+#萌虎摇摇乐送卡
+0 12,21 * * * node /scripts/jd_mhyyl_sendCard.js >> /scripts/logs/jd_mhyyl_sendCard.log 2>&1
 #炸年兽
 1 0-18/2,22 * * * node /scripts/jd_trave.js >> /scripts/logs/jd_trave.log 2>&1
 
