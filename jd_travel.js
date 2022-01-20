@@ -1,6 +1,7 @@
 /*
-1 0-18/2,22 * * * jd_trave.js
+1 0-18/2,22,23 * * * jd_travel.js
 */
+
 const $ = new Env('炸年兽');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -14,7 +15,7 @@ let userToTeamMap = {}
 $.curlCmd = ""
 const h = (new Date()).getHours()
 const helpFlag = h >= 9 && h < 12
-const puzzleFlag = h >= 13 && h < 18
+const puzzleFlag = false;//不做拼图任务
 let expandFlag = h === 22, expandHelpFlag = h === 23
 if (process.env.JD_TRAVEL_EXPAND !== undefined) {
     expandFlag = h === +process.env.JD_TRAVEL_EXPAND
