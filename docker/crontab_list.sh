@@ -108,7 +108,8 @@
 0 12,21 * * * node /scripts/jd_mhyyl_sendCard.js >> /scripts/logs/jd_mhyyl_sendCard.log 2>&1
 #炸年兽
 1 0-18/2,22 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
-
+#点鞭炮赢京豆
+0 8,21 * * * node /scripts/jd_festival.js >> /scripts/logs/jd_festival.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
