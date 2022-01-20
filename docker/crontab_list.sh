@@ -74,8 +74,6 @@
 0 * * * * node /scripts/jd_live_redrain.js.js >> /scripts/logs/jd_live_redrain.js.log 2>&1
 #半点京豆雨
 30 20-23/1 * * * node /scripts/jd_live_redrain_half.js.js >> /scripts/logs/jd_live_redrain_half.js.log 2>&1
-# 京喜签到-喜豆
-10 8,20 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 #超级无线店铺签到
 31 1 * * * node /scripts/jd_sevenDay.js >> /scripts/logs/jd_sevenDay.log 2>&1
 #京东通天塔--签到
