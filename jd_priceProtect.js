@@ -1,21 +1,20 @@
 /*
-const $ = new Env('京东保价');
 已支持IOS双京东账号,Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 ============Quantumultx===============
 [task_local]
 #京东保价
-10 0,12,20 * * * jd_priceProtect.js, tag=京东保价, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+1 0,12,20 * * * jd_priceProtect.js, tag=京东保价, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "10 0,12,20 * * *" script-path=jd_priceProtect.js,tag=京东保价
+cron "1 0,12,20 * * *" script-path=jd_priceProtect.js,tag=京东保价
 
 ===============Surge=================
-京东保价 = type=cron,cronexp="10 0,12,20 * * *",wake-system=1,timeout=3600,script-path=jd_priceProtect.js
+京东保价 = type=cron,cronexp="1 0,12,20 * * *",wake-system=1,timeout=3600,script-path=jd_priceProtect.js
 
 ============小火箭=========
-京东保价 = type=cron,script-path=jd_priceProtect.js, cronexpr="10 0,12,20 * * *", timeout=3600, enable=true
+京东保价 = type=cron,script-path=jd_priceProtect.js, cronexpr="1 0,12,20 * * *", timeout=3600, enable=true
  */
 const $ = new Env('京东保价');
 const CryptoJS = require('crypto-js');
