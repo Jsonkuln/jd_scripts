@@ -30,8 +30,6 @@
 30 7 * * * node /scripts/jd_DrawEntrance.js >> /scripts/logs/jd_DrawEntrance.log 2>&1
 #早起福利
 30 7 * * * node /scripts/jd_goodMorning.js >> /scripts/logs/jd_goodMorning.log 2>&1
-#发财大赢家
-20 8-20/2 * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 #特务Z
 23 8,13 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #店铺签到
@@ -52,8 +50,6 @@
 11 7,15 * * * node /scripts/jd_zsign.js >> /scripts/logs/jd_zsign.log 2>&1
 #芥么赚豪礼
 0 78,22 * * * node /scripts/jd_genz.js >> /scripts/logs/jd_genz.log 2>&1
-#东东世界兑换
-0 0 * * * node /scripts/jd_ddworld_exchange.js >> /scripts/logs/jd_ddworld_exchange.log 2>&1
 #幸运扭蛋
 11 13 * * * node /scripts/jd_lucky_egg.js >> /scripts/logs/jd_lucky_egg.log 2>&1
 # 惊喜欢乐砍
@@ -110,8 +106,10 @@
 33 11,21 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
 #萌虎摇摇乐
 1 0,12,18 * * * node /scripts/jd_mhyyl.js >> /scripts/logs/jd_mhyyl.log 2>&1
+#萌虎摇摇乐送卡
+0 12,21 * * * node /scripts/jd_mhyyl_sendCard.js >> /scripts/logs/jd_mhyyl_sendCard.log 2>&1
 #炸年兽
-1 0,6-18/2 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
+1 0-18/2,22 * * * node /scripts/jd_trave.js >> /scripts/logs/jd_trave.log 2>&1
 
 ##############长期活动##############
 # 签到
@@ -168,8 +166,6 @@
 27 7,15 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
 # 闪购盲盒
 27 8 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
-# 京东秒秒币
-10 7 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 京喜财富岛
 18 0-23/2 * * * node /scripts/jx_cfd.js >> /scripts/logs/jx_cfd.log 2>&1
 #京喜财富岛合成月饼
@@ -232,7 +228,8 @@
 30 0,6-23 * * * node /scripts/jd_jingfen.js >> /scripts/logs/jd_jingfen.log 2>&1
 #许愿池/抽奖机
 0 8,12 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
-
+#京东保价
+1 0,12,20 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
 ##############默认注释活动##############
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
