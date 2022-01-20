@@ -110,6 +110,9 @@
 33 11,21 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
 #萌虎摇摇乐
 1 0,12,18 * * * node /scripts/jd_mhyyl.js >> /scripts/logs/jd_mhyyl.log 2>&1
+#炸年兽
+1 0,6-18/2 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
+
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
