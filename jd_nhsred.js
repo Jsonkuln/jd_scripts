@@ -1,7 +1,7 @@
 /*
 会场红包
-cron 0 0,20,23,12 * * * jd_nhs_red.js
-* */
+0 0,12,20,23 * * * jd_nhsred.js
+*/
 const $ = new Env('会场红包');
 const flCode =  $.isNode() ? (process.env.FLCODE3 ? process.env.FLCODE3 : '999'):'999';
 const jdCookieNode = require('./jdCookie.js');
