@@ -89,7 +89,7 @@
 #见缝插针
 15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 #会场红包
-0 0,20,23,12 * * * node /scripts/jd_nhs_red.js >> /scripts/logs/jd_nhs_red.log 2>&1
+0 0,12,20,23 * * * node /scripts/jd_nhsred.js >> /scripts/logs/jd_nhsred.log 2>&1
 #头文子J
 5 7 * * * node /scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
 #头文字J 游戏
@@ -106,8 +106,6 @@
 1 0,12,18 * * * node /scripts/jd_mhyyl.js >> /scripts/logs/jd_mhyyl.log 2>&1
 #萌虎摇摇乐送卡
 0 12,21 * * * node /scripts/jd_mhyyl_sendCard.js >> /scripts/logs/jd_mhyyl_sendCard.log 2>&1
-#炸年兽
-1 0-18/2,22 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
 #点鞭炮赢京豆
 0 8,21 * * * node /scripts/jd_festival.js >> /scripts/logs/jd_festival.log 2>&1
 ##############长期活动##############
