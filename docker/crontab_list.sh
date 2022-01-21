@@ -74,8 +74,6 @@
 0 * * * * node /scripts/jd_live_redrain.js.js >> /scripts/logs/jd_live_redrain.js.log 2>&1
 #半点京豆雨
 30 20-23/1 * * * node /scripts/jd_live_redrain_half.js.js >> /scripts/logs/jd_live_redrain_half.js.log 2>&1
-# 京喜签到-喜豆
-10 8,20 * * * node /scripts/jx_sign_xd.js >> /scripts/logs/jx_sign_xd.log 2>&1
 #超级无线店铺签到
 31 1 * * * node /scripts/jd_sevenDay.js >> /scripts/logs/jd_sevenDay.log 2>&1
 #京东通天塔--签到
@@ -95,7 +93,7 @@
 #头文子J
 5 7 * * * node /scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
 #头文字J 游戏
-10 6,10,12 * * * node /scripts/jd_mpdzcar_game.js >> /scripts/logs/jd_mpdzcar_game.log 2>&1
+1 0-18/2,22,23 * * * node /scripts/jd_mpdzcar_game.js >> /scripts/logs/jd_mpdzcar_game.log 2>&1
 #头文字J 助力
 10 6 * * * node /scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
 #天天压岁钱
@@ -108,9 +106,8 @@
 1 0,12,18 * * * node /scripts/jd_mhyyl.js >> /scripts/logs/jd_mhyyl.log 2>&1
 #萌虎摇摇乐送卡
 0 12,21 * * * node /scripts/jd_mhyyl_sendCard.js >> /scripts/logs/jd_mhyyl_sendCard.log 2>&1
-#炸年兽
-1 0-18/2,22 * * * node /scripts/jd_trave.js >> /scripts/logs/jd_trave.log 2>&1
-
+#点鞭炮赢京豆
+0 8,21 * * * node /scripts/jd_festival.js >> /scripts/logs/jd_festival.log 2>&1
 ##############长期活动##############
 # 签到
 8 0,8 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
