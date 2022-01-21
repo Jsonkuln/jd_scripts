@@ -106,8 +106,6 @@
 1 0,12,18 * * * node /scripts/jd_mhyyl.js >> /scripts/logs/jd_mhyyl.log 2>&1
 #萌虎摇摇乐送卡
 0 12,21 * * * node /scripts/jd_mhyyl_sendCard.js >> /scripts/logs/jd_mhyyl_sendCard.log 2>&1
-#炸年兽
-1 0-18/2,22 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
 #点鞭炮赢京豆
 0 8,21 * * * node /scripts/jd_festival.js >> /scripts/logs/jd_festival.log 2>&1
 ##############长期活动##############
