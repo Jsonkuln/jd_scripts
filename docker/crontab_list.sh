@@ -89,7 +89,7 @@
 #见缝插针
 15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 #会场红包
-0 0,12,20,23 * * * node /scripts/jd_nhsred.js >> /scripts/logs/jd_nhsred.log 2>&1
+0 0,6,20 * * * node /scripts/jd_red.js >> /scripts/logs/jd_red.log 2>&1
 #头文子J
 5 7 * * * node /scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
 #头文字J 游戏
@@ -227,6 +227,8 @@
 0 8,12 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 #京东保价
 1 0,12,20 * * * node /scripts/jd_priceProtect.js >> /scripts/logs/jd_priceProtect.log 2>&1
+#京东秒秒币
+10 7 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 ##############默认注释活动##############
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
