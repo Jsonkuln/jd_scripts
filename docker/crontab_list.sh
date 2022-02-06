@@ -100,12 +100,6 @@
 10 8,20 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 #通天塔签到共建
 33 11,21 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
-#萌虎摇摇乐
-1 0,12,18 * * * node /scripts/jd_mhyyl.js >> /scripts/logs/jd_mhyyl.log 2>&1
-#萌虎摇摇乐送卡
-0 12,21 * * * node /scripts/jd_mhyyl_sendCard.js >> /scripts/logs/jd_mhyyl_sendCard.log 2>&1
-#萌虎摇摇乐账号获奖情况
-10 22 * * * node /scripts/jd_mhyyl_prize.js >> /scripts/logs/jd_mhyyl_prize.log 2>&1
 #手机年货节
 10 0 1-30 1 * node /scripts/js_sjnhj.js >> /scripts/logs/js_sjnhj.log 2>&1
 #2022新春快乐击鼓助力
