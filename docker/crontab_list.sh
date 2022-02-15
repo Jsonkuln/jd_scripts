@@ -103,7 +103,7 @@
 #手机年货节
 10 0 1-30 1 * node /scripts/js_sjnhj.js >> /scripts/logs/js_sjnhj.log 2>&1
 #2022新春快乐击鼓助力
-15 10,22 1-14 2 *  node /scripts/jd_HappyNewYear_Share.js >> /scripts/logs/jd_HappyNewYear_Share.log 2>&1
+15 20,22 1-14 2 *  node /scripts/jd_HappyNewYear_Share.js >> /scripts/logs/jd_HappyNewYear_Share.log 2>&1
 #颜究种植园
 30 6-20/3 * * *  node /scripts/jd_xinruimz.js >> /scripts/logs/jd_xinruimz.log 2>&1
 ##############长期活动##############
