@@ -103,7 +103,7 @@
 #手机年货节
 10 0 1-30 1 * node /scripts/js_sjnhj.js >> /scripts/logs/js_sjnhj.log 2>&1
 #2022新春快乐击鼓助力
-15 10,22 1-14 2 *  node /scripts/jd_HappyNewYear_Share.js >> /scripts/logs/jd_HappyNewYear_Share.log 2>&1
+15 20,22 1-14 2 *  node /scripts/jd_HappyNewYear_Share.js >> /scripts/logs/jd_HappyNewYear_Share.log 2>&1
 #颜究种植园
 30 6-20/3 * * *  node /scripts/jd_xinruimz.js >> /scripts/logs/jd_xinruimz.log 2>&1
 ##############长期活动##############
@@ -113,8 +113,12 @@
 0,30 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 摇京豆
 0 0 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
-# 东东农场
-5 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+# 东东农场日常任务
+5 6-18/6 * * * node /scripts/jd_fruit_task.js >> /scripts/logs/jd_fruit_task.log 2>&1
+# 东东农场内部水滴互助
+20 7,16 * * * node /scripts/jd_fruit_help.js >> /scripts/logs/jd_fruit_help.log 2>&1
+# 东东农场好友删减奖励
+10 8,17 * * * node /scripts/jd_fruit_friend.js >> /scripts/logs/jd_fruit_friend.log 2>&1
 # 摇钱树
 0 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
 # 东东萌宠
