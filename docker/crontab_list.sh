@@ -88,22 +88,12 @@
 28 16 * * *  node /scripts/jd_computer.js >> /scripts/logs/jd_computer.log 2>&1
 #见缝插针
 15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
-#头文子J
-5 7 * * * node /scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
-#头文字J 游戏
-1 0-18/2,22,23 * * * node /scripts/jd_mpdzcar_game.js >> /scripts/logs/jd_mpdzcar_game.log 2>&1
-#头文字J 助力
-10 6 * * * node /scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
-#天天压岁钱
-33 0,13,20 * * * node /scripts/jx_ttysq.js >> /scripts/logs/jx_ttysq.log 2>&1
 #白条抽奖
 10 8,20 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
 #通天塔签到共建
 33 11,21 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
 #手机年货节
 10 0 1-30 1 * node /scripts/js_sjnhj.js >> /scripts/logs/js_sjnhj.log 2>&1
-#2022新春快乐击鼓助力
-15 20,22 1-14 2 *  node /scripts/jd_HappyNewYear_Share.js >> /scripts/logs/jd_HappyNewYear_Share.log 2>&1
 #颜究种植园
 30 6-20/3 * * *  node /scripts/jd_xinruimz.js >> /scripts/logs/jd_xinruimz.log 2>&1
 ##############长期活动##############
