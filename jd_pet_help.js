@@ -11,17 +11,17 @@
 =================================Quantumultx=========================
 [task_local]
 #东东萌宠
-30 9,22 * * * jd_pet_help.js, tag=东东萌宠, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdmc.png, enabled=true
+30 9,18 * * * jd_pet_help.js, tag=东东萌宠, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdmc.png, enabled=true
 
 =================================Loon===================================
 [Script]
-cron "30 9,22 * * *" script-path=jd_pet_help.js,tag=东东萌宠
+cron "30 9,18 * * *" script-path=jd_pet_help.js,tag=东东萌宠
 
 ===================================Surge================================
-东东萌宠 = type=cron,cronexp="30 9,22 * * *",wake-system=1,timeout=3600,script-path=jd_pet_help.js
+东东萌宠 = type=cron,cronexp="30 9,18 * * *",wake-system=1,timeout=3600,script-path=jd_pet_help.js
 
 ====================================小火箭=============================
-东东萌宠 = type=cron,script-path=jd_pet_help.js, cronexpr="30 9,22 * * *", timeout=3600, enable=true
+东东萌宠 = type=cron,script-path=jd_pet_help.js, cronexpr="30 9,18 * * *", timeout=3600, enable=true
 
  */
 const $ = new Env('东东萌宠内部互助');
@@ -85,6 +85,7 @@ console.log(`共${cookiesArr.length}个京东账号\n`);
 				taskInfoKey = [];
 				option = {};
 				await GetShareCode();
+				await $.wait(2 * 1000);
 			}
 		}
 		console.log('\n互助码收集完毕，开始执行内部助力...\n');
@@ -115,7 +116,7 @@ console.log(`共${cookiesArr.length}个京东账号\n`);
             taskInfoKey = [];
             option = {};
             await jdPet();
-			await $.wait(3 * 1000);
+			await $.wait(30 * 1000);
         }
     }
     if ($.isNode() && allMessage && $.ctrTemp) {

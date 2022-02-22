@@ -23,7 +23,7 @@ cron "15 6-18/6 * * *" script-path=jd_pet.js,tag=东东萌宠
 ====================================小火箭=============================
 东东萌宠 = type=cron,script-path=jd_pet.js, cronexpr="15 6-18/6 * * *", timeout=3600, enable=true
 
-*/
+ */
 const $ = new Env('东东萌宠');
 let cookiesArr = [], cookie = '', jdPetShareArr = [], isBox = false, allMessage = '';
 let message = '', subTitle = '', option = {};
@@ -80,6 +80,7 @@ console.log(`共${cookiesArr.length}个京东账号\n`);
             taskInfoKey = [];
             option = {};
             await jdPet();
+			await $.wait(30 * 1000);
         }
     }
     if ($.isNode() && allMessage && $.ctrTemp) {
@@ -491,7 +492,7 @@ function TotalBean() {
 }
 // 请求
 async function request(function_id, body = {}) {
-    await $.wait(3000); //歇口气儿, 不然会报操作频繁
+    await $.wait(6000); //歇口气儿, 不然会报操作频繁
     return new Promise((resolve, reject) => {
         $.post(taskUrl(function_id, body), (err, resp, data) => {
             try {
