@@ -10,20 +10,22 @@
 ==========================Quantumultx=========================
 [task_local]
 #东东农场内部水滴互助
-20 7,16 * * * jd_fruit_help.js, tag=东东农场内部互助, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdnc.png, enabled=true
+20 4,16 * * * jd_fruit_help.js, tag=东东农场内部互助, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdnc.png, enabled=true
 =========================Loon=============================
 [Script]
-cron "20 7,16 * * *" script-path=jd_fruit_help.js,tag=东东农场内部互助
+cron "20 4,16 * * *" script-path=jd_fruit_help.js,tag=东东农场内部互助
 
 =========================Surge============================
 东东农场内部互助 = type=cron,cronexp="20 4,16 * * *",wake-system=1,timeout=3600,script-path=jd_fruit_help.js
 
 =========================小火箭===========================
-东东农场内部互助 = type=cron,script-path=jd_fruit_help.js, cronexpr="20 7,16 * * *", timeout=3600, enable=true
+东东农场内部互助 = type=cron,script-path=jd_fruit_help.js, cronexpr="20 4,16 * * *", timeout=3600, enable=true
 
 export DO_TEN_WATER_AGAIN="" 默认再次浇水
+
 每号间隔（毫秒），默认0毫秒（0分钟）
 export fruit_sleep=20000
+
 */
 const $ = new Env('东东农场内部水滴互助');
 let cookiesArr = [],
@@ -80,6 +82,7 @@ let llhelp=true;
             option = {};
             $.retry = 0;
 		  await GetCollect();
+		  await $.wait(1500);
 		}
 	  }
 	}
@@ -105,6 +108,7 @@ let llhelp=true;
             option = {};
             $.retry = 0;
             await jdFruit();
+			await $.wait(20 * 1000);
         }
 		if ($.isNode()) {
 		process.env.fruit_sleep ? await $.wait(Number(process.env.fruit_sleep)) : ''
